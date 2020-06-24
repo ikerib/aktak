@@ -1,0 +1,33 @@
+
+<div class="col-md-12 mt-5">
+    {{ form_start(form) }}
+
+    <div class="row">
+        <div class="col-6">
+            {{ form_row(form.kodea, {'attr':{'class':''}}) }}
+            {{ form_row(form.hasiera, {'attr':{'class':'datepicker'}}) }}
+            {{ form_row(form.amaiera, {'attr':{'class':'datepicker'}}) }}
+        </div>
+        <div class="col-6">
+            {{ form_row(form.orriak, {'attr':{'class':''}}) }}
+            {{ form_row(form.altuera, {'attr':{'class':''}}) }}
+            {{ form_row(form.zabalera, {'attr':{'class':''}}) }}
+        </div>
+    </div>
+
+    <div class="row">&nbsp;</div>
+
+    <div class="row">
+        <div class="col-6">
+            <label for="">Katalogua</label>
+            {{ form_row(form.katalogatua) }}
+        </div>
+    </div>
+
+
+        {{ form_widget(form) }}
+        <div style="display: none;">
+            <button class="btn btn-primary btnSubmitButton"><i class="fas fa-save"></i> {{ button_label|default('Gorde') }}</button>
+        </div>
+    {{ form_end(form) }}
+</div>

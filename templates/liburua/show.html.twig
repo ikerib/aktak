@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liburua{% endblock %}
+
+{% block body %}
+    <h1>Liburua</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ liburua.id }}</td>
+            </tr>
+            <tr>
+                <th>Kodea</th>
+                <td>{{ liburua.kodea }}</td>
+            </tr>
+            <tr>
+                <th>Hasiera</th>
+                <td>{{ liburua.hasiera ? liburua.hasiera|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Amaiera</th>
+                <td>{{ liburua.amaiera ? liburua.amaiera|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Orriak</th>
+                <td>{{ liburua.orriak }}</td>
+            </tr>
+            <tr>
+                <th>Altuera</th>
+                <td>{{ liburua.altuera }}</td>
+            </tr>
+            <tr>
+                <th>Zabalera</th>
+                <td>{{ liburua.zabalera }}</td>
+            </tr>
+            <tr>
+                <th>Katalogatua</th>
+                <td>{{ liburua.katalogatua ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Oharrak</th>
+                <td>{{ liburua.oharrak }}</td>
+            </tr>
+            <tr>
+                <th>Observaciones</th>
+                <td>{{ liburua.observaciones }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('liburua_index') }}">back to list</a>
+
+    <a href="{{ path('liburua_edit', {'id': liburua.id}) }}">edit</a>
+
+    {{ include('liburua/_delete_form.html.twig') }}
+{% endblock %}

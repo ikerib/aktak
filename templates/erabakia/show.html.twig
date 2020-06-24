@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Erabakia{% endblock %}
+
+{% block body %}
+    <h1>Erabakia</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ erabakium.id }}</td>
+            </tr>
+            <tr>
+                <th>Adata</th>
+                <td>{{ erabakium.adata ? erabakium.adata|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Gaiak</th>
+                <td>{{ erabakium.gaiak }}</td>
+            </tr>
+            <tr>
+                <th>Temas</th>
+                <td>{{ erabakium.temas }}</td>
+            </tr>
+            <tr>
+                <th>Url</th>
+                <td>{{ erabakium.url }}</td>
+            </tr>
+            <tr>
+                <th>Oharrak</th>
+                <td>{{ erabakium.oharrak }}</td>
+            </tr>
+            <tr>
+                <th>Observaciones</th>
+                <td>{{ erabakium.observaciones }}</td>
+            </tr>
+            <tr>
+                <th>Akta</th>
+                <td>{{ erabakium.akta ? 'Yes' : 'No' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('erabakia_index') }}">back to list</a>
+
+    <a href="{{ path('erabakia_edit', {'id': erabakium.id}) }}">edit</a>
+
+    {{ include('erabakia/_delete_form.html.twig') }}
+{% endblock %}

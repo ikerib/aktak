@@ -1,0 +1,22 @@
+
+<div class="col-md-12 mt-5">
+    {{ form_start(form) }}
+
+        {{ form_row(form.adata) }}
+        {{ form_row(form.gaiak) }}
+        {{ form_row(form.temas) }}
+        <hr>
+        {{ form_row(form.pdfFile) }}
+        <hr>
+        {{ form_row(form.oharrak) }}
+        {{ form_row(form.observaciones) }}
+        {{ form_row(form.akta) }}
+
+
+        {{ form_rest(form) }}
+        <div style="display: none;">
+            <button class="btn btn-primary btnSubmitButton"><i class="fas fa-save"></i> {{ button_label|default('Gorde') }}</button>
+        </div>
+
+    {{ form_end(form) }}
+</div>

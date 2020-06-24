@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="eu" target-language="es" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="caUcuya" resname="sidebar.mota">
+        <source>sidebar.mota</source>
+        <target>Tipos</target>
+      </trans-unit>
+      <trans-unit id="hk4iS5H" resname="sidebar.egoera">
+        <source>sidebar.egoera</source>
+        <target>Estados</target>
+      </trans-unit>
+      <trans-unit id="CmCtSmy" resname="Modu arruntera itzuli">
+        <source>Modu arruntera itzuli</source>
+        <target>Volver al modo normal</target>
+      </trans-unit>
+      <trans-unit id="9Yfwh25" resname="Saioa itxi">
+        <source>Saioa itxi</source>
+        <target>Cerrar sesión</target>
+      </trans-unit>
+      <trans-unit id="H9JaFny" resname="Oroitu nazazu">
+        <source>Oroitu nazazu</source>
+        <target>Recuerdame</target>
+      </trans-unit>
+      <trans-unit id="1MGk5Cx" resname="Sartu">
+        <source>Sartu</source>
+        <target>Entrar</target>
+      </trans-unit>
+      <trans-unit id="032iJPS" resname="Berria">
+        <source>Berria</source>
+        <target>Nuevo</target>
+      </trans-unit>
+      <trans-unit id="wvNEPHq" resname="sidebar.liburua">
+        <source>sidebar.liburua</source>
+        <target>Libros</target>
+      </trans-unit>
+      <trans-unit id="pOFZFG6" resname="sidebar.erabakia">
+        <source>sidebar.erabakia</source>
+        <target>Decisiones</target>
+      </trans-unit>
+      <trans-unit id="Bq1D.wp" resname="berria">
+        <source>berria</source>
+        <target>nuevo</target>
+      </trans-unit>
+      <trans-unit id="RbwIasD" resname="Itzuli zerrendara">
+        <source>Itzuli zerrendara</source>
+        <target>Volver a la lista</target>
+      </trans-unit>
+      <trans-unit id="yOJgMBv" resname="btnSave">
+        <source>btnSave</source>
+        <target>Guardar</target>
+      </trans-unit>
+      <trans-unit id="OrdjZlT" resname="editatzen">
+        <source>editatzen</source>
+        <target>editando</target>
+      </trans-unit>
+      <trans-unit id="szxdToD" resname="navitem.changeLanguage">
+        <source>navitem.changeLanguage</source>
+        <target>Cambiar idioma</target>
+      </trans-unit>
+      <trans-unit id="y5j3jMu" resname="Erregistro kopurua:">
+        <source>Erregistro kopurua:</source>
+        <target>Nº Registros:</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

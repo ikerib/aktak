@@ -1,0 +1,5 @@
+<form method="post" action="{{ path('erabakia_delete', {'id': erabakium.id}) }}">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ erabakium.id) }}">
+    <a href="javascript:void(0);" class="btnRemoveRow text-danger" ><i class="fas fa-trash-alt"></i></a>
+</form>

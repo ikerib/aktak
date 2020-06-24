@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mota{% endblock %}
+
+{% block body %}
+    <h1>Mota</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ motum.id }}</td>
+            </tr>
+            <tr>
+                <th>Izena</th>
+                <td>{{ motum.izena }}</td>
+            </tr>
+            <tr>
+                <th>Nombre</th>
+                <td>{{ motum.nombre }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('mota_index') }}">back to list</a>
+
+    <a href="{{ path('mota_edit', {'id': motum.id}) }}">edit</a>
+
+    {{ include('mota/_delete_form.html.twig') }}
+{% endblock %}

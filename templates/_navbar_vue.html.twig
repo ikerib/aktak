@@ -1,0 +1,19 @@
+{#<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">#}
+<nav class="navbar navbar-expand-md navbar-dark p-0 {% if is_granted('ROLE_PREVIOUS_ADMIN') %} bg-danger {% else %}bg-primary {% endif %}fixed-top">
+    <a class="navbar-brand col-md-2" href="#">AKTAK - <small>Kontsulta</small></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item"></li>
+        </ul>
+
+        <ul class="nav navbar-nav ezker-borobil">
+            <li class="nav-item">
+                <a href="#" class="nav-link">{{ "navitem.changeLanguage" | trans }}</a>
+            </li>
+        </ul>
+    </div>
+</nav>

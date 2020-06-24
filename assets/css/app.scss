@@ -1,0 +1,89 @@
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/regular';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/brands';
+
+// Swal
+@import '~@sweetalert2/theme-bootstrap-4/bootstrap-4.scss';
+@import "~animate.css/animate.min.css";
+
+// Datepicker
+@import "~bootstrap-datepicker/dist/css/bootstrap-datepicker.css";
+
+// Select2
+@import "~select2/dist/css/select2.min.css";
+
+/*! `Custom` Bootstrap 4 theme */
+/* https://themestr.app/theme?start=1&font=Nunito&palette=11&icons=fontawesome&border-width=1px&spacer=0.7rem&btn-border-radius=.25rem */
+@import url(https://use.fontawesome.com/releases/v5.0.10/css/all.css);
+@import url(https://fonts.googleapis.com/css?family=Nunito:200,300,400,700);
+$headings-font-family:Nunito;
+
+$primary: #165d7c;
+$lehena: #17417c;
+$bigarrena: #1e6b7c;
+$secondary:#868e96;
+$success:#28a745;
+$danger:#dc3545;
+$info:#17a2b8;
+$warning:#ffc107;
+$light:#f8f9fa;
+$dark:#343434;
+$spacer:0.7rem;
+$border-width:1px;
+$btn-border-radius:.25rem;
+$font-size-base:0.90rem;
+$font-weight-bold:700;
+
+$modal-backdrop-bg: #343434;
+
+@import "~bootstrap/scss/bootstrap";
+.modal-backdrop {
+    z-index: -1;
+}
+body {
+    font-size: .875rem;
+    background-size:     cover;
+    background-repeat:   no-repeat;
+    background-position: center center;
+}
+.navbar-dark .navbar-nav .nav-link {
+    color: #ffffff !important;
+}
+.navbar-brand {
+    background-color: $lehena;
+    //font-size: 1.4rem !important;
+    font-weight: 400 !important;
+    letter-spacing: 0.225em;
+    //line-height: 24px !important;
+    padding-right: 14px;
+    border-radius: 0 25px 0 0;
+    text-align: center;
+    //width: 204px;
+}
+/*
+ * Content
+ */
+
+[role="main"] {
+    padding-top: 133px; /* Space for fixed navbar */
+}
+
+@media (min-width: 768px) {
+    [role="main"] {
+        padding-top: 28px; /* Space for fixed navbar */
+    }
+}
+
+
+@import "sidebar";
+@import "~bootstrap-datepicker/dist/css/bootstrap-datepicker.standalone.min.css";
+
+.form-bg {
+    background-color: #e9ebfa;
+    padding: 10px;
+    //border: #808080 1px solid;
+}
+
+//.custom-file-label { opacity: 0; }
+//.custom-file-input { opacity: 1; }

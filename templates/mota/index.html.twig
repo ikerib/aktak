@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ "sidebar.mota" | trans }}{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card border-light">
+                <div class="card-header">
+                    <h1>{{ "sidebar.mota" | trans }}</h1>
+                </div>
+                <div class="card-body text-right">
+                    <a href="{{ path('egoera_new') }}" class="btn btn-primary"><i class="fas fa-plus-circle"></i>{{ " Berria" | trans }}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-striped table-hover table-responsive-sm">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Izena</th>
+                    <th>Nombre</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for motum in motas %}
+                <tr>
+                    <td>{{ motum.id }}</td>
+                    <td>{{ motum.izena }}</td>
+                    <td>{{ motum.nombre }}</td>
+                    <td>
+                        <ul class="list-inline mb-0">
+                            <li class="list-inline-item">
+                                <a href="{{ path('mota_edit', {'id': motum.id}) }}"><i class="fas fa-edit"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                {{ include('mota/_delete_form.html.twig') }}
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="4">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

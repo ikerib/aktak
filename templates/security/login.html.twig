@@ -1,0 +1,171 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}:: LOGIN ::!{% endblock %}
+
+{% block navbar %}{% endblock %}
+
+{% block stylesheets %}
+
+    {{ parent() }}
+
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-align: center;
+            align-items: center;
+            padding-top: 40px;
+            padding-bottom: 40px;
+            background-color: #f5f5f5;
+        }
+
+        .form-signin {
+            width: 100%;
+            max-width: 420px;
+            padding: 15px;
+            margin: auto;
+        }
+
+        .form-label-group {
+            position: relative;
+            margin-bottom: 1rem;
+        }
+
+        .form-label-group > input,
+        .form-label-group > label {
+            height: 3.125rem;
+            padding: .75rem;
+        }
+
+        .form-label-group > label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            width: 100%;
+            margin-bottom: 0; /* Override default `<label>` margin */
+            line-height: 1.5;
+            color: #495057;
+            pointer-events: none;
+            cursor: text; /* Match the input under the label */
+            border: 1px solid transparent;
+            border-radius: .25rem;
+            transition: all .1s ease-in-out;
+        }
+
+        .form-label-group input::-webkit-input-placeholder {
+            color: transparent;
+        }
+
+        .form-label-group input:-ms-input-placeholder {
+            color: transparent;
+        }
+
+        .form-label-group input::-ms-input-placeholder {
+            color: transparent;
+        }
+
+        .form-label-group input::-moz-placeholder {
+            color: transparent;
+        }
+
+        .form-label-group input::placeholder {
+            color: transparent;
+        }
+
+        .form-label-group input:not(:placeholder-shown) {
+            padding-top: 1.25rem;
+            padding-bottom: .25rem;
+        }
+
+        .form-label-group input:not(:placeholder-shown) ~ label {
+            padding-top: .25rem;
+            padding-bottom: .25rem;
+            font-size: 12px;
+            color: #777;
+        }
+
+        /* Fallback for Edge
+        -------------------------------------------------- */
+        @supports (-ms-ime-align: auto) {
+            .form-label-group > label {
+                display: none;
+            }
+            .form-label-group input::-ms-input-placeholder {
+                color: #777;
+            }
+        }
+
+        /* Fallback for IE
+        -------------------------------------------------- */
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+            .form-label-group > label {
+                display: none;
+            }
+            .form-label-group input:-ms-input-placeholder {
+                color: #777;
+            }
+        }
+
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+
+{% endblock %}
+
+{% block bodyClass %}text-center{% endblock %}
+
+{% block noMain %}
+    <div class="row">&nbsp;</div>
+    <form class="form-signin" method="post">
+        <h3>ERABAKIAK</h3>
+        <h6>login</h6>
+        {% if error %}
+            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+        {% endif %}
+        <label for="inputUsername" class="sr-only">Usernames</label>
+        <input type="text" name="_username" value="{{ last_username }}" id="inputUsername" class="form-control" placeholder="Username" required autofocus>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" name="_password" id="inputPassword" class="form-control" placeholder="Password" required>
+
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+        <div class="row">&nbsp;</div>
+        <div class="checkbox mb-3 mylabel">
+            <label>
+                <input type="checkbox" name="_remember_me"> {{ "Oroitu nazazu" | trans }}
+            </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">
+            {{ "Sartu" | trans }}
+        </button>
+    </form>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        $(document).ready(function () {
+            const bgArray = ['background1.jpg','background2.jpg','background3.jpg','background4.jpg','background5.jpg','background6.jpg','background7.jpg','background8.jpg','background9.jpg','background10.jpg','background11.jpg','background12.jpg','background13.jpg','background14.jpg','background15.jpg','background16.jpg'];
+            const bg = bgArray[Math.floor(Math.random() * bgArray.length)];
+            const path = '/img/';
+            const imageUrl = path + bg;
+            $('body').css('background-image', 'url(' + imageUrl +')');
+        });
+    </script>
+{% endblock %}

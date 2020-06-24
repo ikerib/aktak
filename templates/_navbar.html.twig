@@ -1,0 +1,39 @@
+{#<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">#}
+<nav class="navbar navbar-expand-md navbar-dark p-0 {% if is_granted('ROLE_PREVIOUS_ADMIN') %} bg-danger {% else %}bg-primary {% endif %}fixed-top">
+    <a class="navbar-brand col-md-2" href="#">AKTAK</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+
+            </li>
+
+        </ul>
+
+
+
+        <ul class="nav navbar-nav ezker-borobil">
+            {% if is_granted('ROLE_PREVIOUS_ADMIN') %}
+                <li class="nav-item">
+                    <a class="nav-link btn btn-outline-info"  href="{{ path('default', {'_switch_user': '_exit'}) }}"><i class="fas fa-door-open"></i> &nbsp;{{ "Modu arruntera itzuli" | trans }}</a>
+                </li>
+            {% endif %}
+            <li class="dropdown">
+                {% if app.user['displayname'] is defined  %}
+                    <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
+                        Kaixo, {% if app.user['displayname'] is defined %} {{ app.user.displayname }} {% else %} {{ app.user.username }}{% endif %} <b class="caret"></b>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right position-absolute" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">User submenu1</a>
+                        <a class="dropdown-item" href="#">User submenu2</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="{{ path('app_logout') }}">{{ "Saioa itxi" | trans }}</a>
+                    </div>
+                {% endif %}
+            </li>
+        </ul>
+    </div>
+</nav>

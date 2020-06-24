@@ -1,0 +1,9 @@
+
+<div class="col-md-12 mt-5">
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <div style="display: none;">
+            <button class="btn btn-primary btnSubmitButton"><i class="fas fa-save"></i> {{ button_label|default('Gorde') }}</button>
+        </div>
+    {{ form_end(form) }}
+</div>

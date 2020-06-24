@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="eu">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Iker Ibarguren">
+    <title>Aktak</title>
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
+    <link rel="icon" href="{{asset('favicon.ico')}}" type="image/x-icon">
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('cssApp') }}
+    {% endblock %}
+</head>
+<body class="{% block bodyClass %}{% endblock %}">
+
+{% block navbar %}
+    {{ include('_navbar_vue.html.twig') }}
+{% endblock %}
+
+{% block noMain %}
+    {% block main %}
+        <main role="main" class="container-fluid">
+            <div class="row" style="display: none;">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    {% for label, messages in app.flashes %}
+                        {% set mezua = "" %}
+                        {% for message in messages %}
+                            {% set mezua = mezua ~ '<br/>' ~ message %}
+
+                        {% endfor %}
+                        <div class="myalert alert alert-{{ label }}" data-alert="{{ label }}" data-message="{{ mezua }}">
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+            <div class="row">
+{#                {% block sidebar %}#}
+{#                    {{ include('_sidebar.html.twig') }}#}
+{#                {% endblock %}#}
+{#                <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">#}
+                <main role="main" class="col-md-12 ml-sm-auto col-lg-12 px-4">
+                    {% block body %} {% endblock %}
+                </main>
+
+            </div>
+
+
+        </main><!-- /.container -->
+    {% endblock %} {# main#}
+{% endblock %} {# noMain #}
+
+{% block javascripts %}
+    {{ encore_entry_script_tags('jsVue') }}
+{% endblock %}
+
+<input id="app_locale" type="hidden" name="app_locale" value="{{ app.request.getLocale() }}">
+</body>
+</html>

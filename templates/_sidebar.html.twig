@@ -1,0 +1,43 @@
+<nav class="col-md-2 d-none d-md-block bg-light sidebar">
+    <div class="sidebar-sticky">
+        {% if is_granted('ROLE_USER') %}
+        <ul class="nav flex-column sidebarul">
+
+            <li class="nav-item {% if app.request.get('_route') starts with "erabakia_" %}sidebar-active {% endif %}">
+                <a class="nav-link {% if app.request.get('_route') starts with "erabakia_" %}active {% endif %} " href="{{ path('erabakia_index') }}">
+                    <i class="fas fa-users"></i>
+                    {{ "sidebar.erabakia" | trans }} <span class="sr-only">(current)</span>
+                </a>
+            </li>
+
+            <li class="nav-item {% if app.request.get('_route') starts with "liburua_" %}sidebar-active {% endif %}">
+                <a class="nav-link {% if app.request.get('_route') starts with "liburua_" %}active {% endif %} " href="{{ path('liburua_index') }}">
+                    <i class="fas fa-users"></i>
+                    {{ "sidebar.liburua" | trans }} <span class="sr-only">(current)</span>
+                </a>
+            </li>
+
+        </ul>
+        <hr>
+        <ul class="nav flex-column ">
+            <li class="nav-item {% if app.request.get('_route') == "mota_index"
+                or app.request.get('_route') == "mota_new"
+                or app.request.get('_route') == "mota_add_employee"
+                or app.request.get('_route') == "mota_edit"
+                or app.request.get('_route') == "mota_show"%}sidebar-active {% endif %}">
+                <a class="nav-link {% if app.request.get('_route') starts with "mota_" %}active {% endif %} " href="{{ path('mota_index') }}">
+                    <i class="fas fa-city"></i>
+                    {{ "sidebar.mota" | trans }}
+                </a>
+            </li>
+            <li class="nav-item {% if app.request.get('_route') starts with "egoera_" %}sidebar-active {% endif %}">
+                <a class="nav-link {% if app.request.get('_route') starts with "egoera_" %}active {% endif %} " href="{{ path('egoera_index') }}">
+                    <i class="fas fa-users"></i>
+                    {{ "sidebar.egoera" | trans }} <span class="sr-only">(current)</span>
+                </a>
+            </li>
+        </ul>
+
+        {% endif %}
+    </div>
+</nav>
