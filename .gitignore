@@ -78,6 +78,7 @@ yarn-error.log
 
 ###> symfony/framework-bundle ###
 /.yarn.lock
+/.env
 /.env.local
 /.env.local.php
 /.env.*.local

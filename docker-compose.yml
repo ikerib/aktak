@@ -16,7 +16,7 @@ services:
 
     app:
         container_name: aktak_app
-        env_file: ./.env.local
+        env_file: ./.env
         build:
             context: .
             dockerfile: ./docker/php/dev/Dockerfile
