@@ -51,7 +51,7 @@ class ErabakiaController extends AbstractController
             10
         );
 
-        return $this->render('default/index.html.twig', [
+        return $this->render('erabakia/index.html.twig', [
             'erabakias'      => $pagination,
             'searchform'    => $searchForm->createView()
         ]);

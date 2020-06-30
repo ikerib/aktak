@@ -23,7 +23,7 @@ class DefaultController extends AbstractController
     public function index(Request $request, ErabakiaRepository $erabakiaRepository, PaginatorInterface $paginator): Response
     {
         $searchForm = $this->createForm( ErabakiaSearchFormType::class, null, [
-            'action' => $this->generateUrl( 'erabakia_index' ),
+            'action' => $this->generateUrl( 'default' ),
             'method' => 'GET',
         ] );
 
