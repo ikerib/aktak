@@ -86,5 +86,11 @@ $(document).ready(function () {
         $("#erabakia_search_form_liburua").val("");
     });
 
+    $('.selectBook').on('click', function () {
+        const liburuaid = $(this).data("liburuaid");
+        $("#erabakia_search_form_liburua").val(liburuaid);
+        $("#searchForm").submit();
+    })
+
 });
 
