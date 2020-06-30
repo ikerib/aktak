@@ -1,10 +1,10 @@
 FROM nginx:1.15.3-alpine
 
-#COPY docker/nginx/certs /etc/nginx/certs
+COPY docker/nginx/certs /etc/nginx/certs
 
 RUN rm /etc/nginx/conf.d/default.conf
 # COPY docker/nginx/default.prod.conf /etc/nginx/conf.d/default.conf
-COPY docker/nginx/default.prod.conf /etc/nginx/conf.d/default.conf
+COPY docker/nginx/default.conf /etc/nginx/conf.d/default.conf
 
 COPY public /app/public
 

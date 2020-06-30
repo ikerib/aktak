@@ -32,9 +32,13 @@ composer-install:
 	USER_ID=${USER_ID} docker exec -it --user ${USER_ID} ${DOCKER_APP} composer install --no-scripts --no-interaction --optimize-autoloader
 
 deploy:
+	sed -i '/APP_ENV/s/=.*/=prod/g'  .env
+	sed -i '/APP_DEBUG/s/=.*/=0/g'  .env
 	docker build --build-arg CACHE_DATE=$(date +%Y-%m-%d:%H:%M:%S) -t ${DOCKER_REPO_NGINX} --file=docker/nginx/Dockerfile .
 	docker build --build-arg CACHE_DATE=$(date +%Y-%m-%d:%H:%M:%S) -t ${DOCKER_REPO_APP} --file=docker/php/prod/Dockerfile .
 	docker push ${DOCKER_REPO_NGINX}
 	docker push ${DOCKER_REPO_APP}
+	sed -i '/APP_ENV/s/=.*/=dev/g'  .env
+	sed -i '/APP_DEBUG/s/=.*/=1/g'  .env
 
 default: deploy
