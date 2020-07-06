@@ -7,11 +7,11 @@
     <body>
       <trans-unit id="caUcuya" resname="sidebar.mota">
         <source>sidebar.mota</source>
-        <target>Mota</target>
+        <target>Motak</target>
       </trans-unit>
       <trans-unit id="hk4iS5H" resname="sidebar.egoera">
         <source>sidebar.egoera</source>
-        <target>Egoera</target>
+        <target>Egoerak</target>
       </trans-unit>
       <trans-unit id="CmCtSmy" resname="Modu arruntera itzuli">
         <source>Modu arruntera itzuli</source>

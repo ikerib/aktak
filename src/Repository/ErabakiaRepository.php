@@ -43,7 +43,7 @@ class ErabakiaRepository extends ServiceEntityRepository
             }
         }
 
-        $qb->orderBy( 'l.adata', 'ASC' );
+        $qb->orderBy( 'l.id', 'DESC' );
 
         return $qb->getQuery();
     }
