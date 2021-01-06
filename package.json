@@ -19,7 +19,7 @@
         "@fortawesome/fontawesome-free": "^5.13.0",
         "@sweetalert2/theme-bootstrap-4": "^3.1.4",
         "animate.css": "^4.1.0",
-        "axios": "^0.19.2",
+        "axios": "^0.21.1",
         "bloodhound-js": "^1.2.3",
         "bootstrap": "^4.4.1",
         "bootstrap-colorpicker": "^3.2.0",
