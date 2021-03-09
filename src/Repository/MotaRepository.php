@@ -6,6 +6,7 @@ use App\Entity\Mota;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
+
 /**
  * @method Mota|null find($id, $lockMode = null, $lockVersion = null)
  * @method Mota|null findOneBy(array $criteria, array $orderBy = null)

@@ -28,10 +28,9 @@ services:
         environment:
             XDEBUG_CONFIG: ${XDEBUG_CONFIG}
             PHP_IDE_CONFIG: ${PHP_IDE_CONFIG}
-            PS1: "\\u@\\h:\\w\\$$ "
-        hostname: 'erabakiak_app'
         volumes:
             - '.:/app'
+            - './docker/php/dev/.zsh_history:/home/appuser/.zsh_history:rw'
         working_dir: /app
 
     nginx:

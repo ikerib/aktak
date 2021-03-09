@@ -1,5 +1,6 @@
 config/packages/dev/
 config/packages/test/
+/doc/
 /public/uploads/PDF/
 /.git/
 .idea/
