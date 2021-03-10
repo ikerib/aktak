@@ -24,7 +24,7 @@ import '../css/app.scss';
 $(document).ready(function () {
 
     $(".datepicker").datepicker({
-        format: "yyyy-mm-dd",
+        // format:  'yyyy-mm-ddT22:12:34.000Z',
         todayBtn: "linked",
         language: "eu",
         autoclose: true,

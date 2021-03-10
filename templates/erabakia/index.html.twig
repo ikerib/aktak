@@ -84,8 +84,8 @@
                     <tr>
                         <td>{{ erabakium.id }}</td>
                         <td>{{ erabakium.adata ? erabakium.adata|date('Y-m-d') : '' }}</td>
-                        <td>{{ erabakium.gaiak }}</td>
-                        <td>{{ erabakium.temas }}</td>
+                        <td>{{ erabakium.gaiak | raw }}</td>
+                        <td>{{ erabakium.temas | raw }}</td>
                         <td class="text-center"><a href="{{ vich_uploader_asset(erabakium,'pdfFile') }}" target="_blank"><i class="fas fa-file-pdf"></i></a></td>
                         <td>{{ erabakium.akta ? 'Bai' : 'Ez' }}</td>
                         <td>

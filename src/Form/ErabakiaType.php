@@ -20,12 +20,19 @@ class ErabakiaType extends AbstractType
                 'label' => 'Data',
                 'widget' => 'single_text',
                 'html5' => false,
+                'format' => "yyyy-MM-dd",
                 'attr' => [
                     'class' => 'form-control input-inline datepicker'
                 ]
             ])
-            ->add('gaiak')
-            ->add('temas')
+            ->add('gaiak', CKEditorType::class, [
+                'config_name' => 'pasaia_config',
+                'config'      => array('uiColor' => '#ffffff'),
+            ])
+            ->add('temas', CKEditorType::class, [
+                'config_name' => 'pasaia_config',
+                'config'      => array('uiColor' => '#ffffff'),
+            ])
             ->add('pdfFile', VichFileType::class, [
                 'label' => 'Fitxategia',
                 'allow_delete' => true,
