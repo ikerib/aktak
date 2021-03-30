@@ -1,4 +1,6 @@
 {
+	"name": "Aktak",
+	"description": "Udaleko aktak kudeatzeko aplikazioa",
     "type": "project",
     "license": "proprietary",
     "require": {
@@ -43,6 +45,7 @@
         "symfony/symfony": "*"
     },
     "require-dev": {
+        "deployer/deployer": "^6.8",
         "symfony/debug-pack": "^1.0",
         "symfony/maker-bundle": "^1.14"
     },
