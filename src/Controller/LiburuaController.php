@@ -19,7 +19,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Form\LiburuaSearchFormType;
 
 /**
- * @Route("/admin/liburua")
+ * @Route("/kudeatu/liburua")
  */
 class LiburuaController extends AbstractController
 {

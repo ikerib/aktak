@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/admin/egoera")
+ * @Route("/kudeatu/egoera")
  */
 class EgoeraController extends AbstractController
 {

@@ -11,6 +11,6 @@
 <div class="example-wrapper">
     <h1>Admin gunea ✅</h1>
 
-    <h3>Kaixo {{ app.user.displayname }}. Ongi etorri.</h3>
+    <h3>Kaixo {% if app.user %}{{ app.user.displayname }}{% endif %} . Ongi etorri.</h3>
 </div>
 {% endblock %}

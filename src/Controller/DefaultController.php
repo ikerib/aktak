@@ -14,10 +14,9 @@ class DefaultController extends AbstractController
 {
     /**
      * @Route("/", name="default")
-     * @param Request            $request
+     * @param Request $request
      * @param ErabakiaRepository $erabakiaRepository
      * @param PaginatorInterface $paginator
-     *
      * @return Response
      */
     public function index(Request $request, ErabakiaRepository $erabakiaRepository, PaginatorInterface $paginator): Response
@@ -39,6 +38,8 @@ class DefaultController extends AbstractController
         }
 
         $query = $erabakiaRepository->getAllQuery($filter, $extra);
+        $kk = $erabakiaRepository->findAll();
+
         $pagination = $paginator->paginate(
             $query,
             $request->query->getInt('page', 1),
