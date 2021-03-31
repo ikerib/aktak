@@ -1,0 +1,43 @@
+<?php
+namespace Deployer;
+
+require 'recipe/symfony4.php';
+require 'recipe/yarn.php';
+
+// Project name
+set('application', 'Aktak');
+
+// Project repository
+set('repository', 'https://github.com/ikerib/aktak.git');
+
+// [Optional] Allocate tty for git clone. Default value is false.
+set('git_tty', true); 
+
+// Shared files/dirs between deploys 
+add('shared_files', ['.env']);
+add('shared_dirs', ['var/log','var/cache','public/uploads']);
+set('env', [
+    'APP_ENV' => 'prod',
+]);
+// Writable dirs by web server 
+add('writable_dirs', ['var','public/uploads']);
+set('allow_anonymous_stats', false);
+
+// Hosts
+host('XXX.XXX.XXX.XXX')
+    ->user('USER')
+    ->set('branch', 'master')
+    ->set('deploy_path', '/var/www/aktak');
+    
+
+after('deploy:symlink', 'yarn:install');
+task('yarn:prod', function (){
+    run("cd {{release_path}} && yarn encore prod");
+});
+after('yarn:install','yarn:prod');
+
+// Migrate database before symlink new release.
+//before('deploy:symlink', 'database:migrate');
+
+// [Optional] if deploy fails automatically unlock.
+after('deploy:failed', 'deploy:unlock');
