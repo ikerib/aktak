@@ -1,4 +1,5 @@
 {
+	"name": "ikerib/aktak",
 	"description": "Udaleko aktak kudeatzeko aplikazioa",
     "type": "project",
     "license": "proprietary",
@@ -84,6 +85,5 @@
             "assets:install --symlink --relative %PUBLIC_DIR%": "symfony-cmd",
             "assets:install %PUBLIC_DIR%": "symfony-cmd"
         }
-    },
-	"name": ""
+    }
 }

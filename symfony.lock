@@ -47,7 +47,10 @@
         "version": "3.1.1"
     },
     "doctrine/dbal": {
-        "version": "2.12.1"
+        "version": "2.13.0"
+    },
+    "doctrine/deprecations": {
+        "version": "v0.5.3"
     },
     "doctrine/doctrine-bundle": {
         "version": "2.3",
@@ -371,12 +374,12 @@
         "version": "v4.4.21"
     },
     "symfony/monolog-bundle": {
-        "version": "3.3",
+        "version": "3.7",
         "recipe": {
             "repo": "github.com/symfony/recipes",
             "branch": "master",
-            "version": "3.3",
-            "ref": "d7249f7d560f6736115eee1851d02a65826f0a56"
+            "version": "3.7",
+            "ref": "f4adb4379ee437f91ecb1bd5a41c1de6286b9a04"
         },
         "files": [
             "config/packages/dev/monolog.yaml",
