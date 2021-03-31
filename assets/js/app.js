@@ -25,6 +25,7 @@ $(document).ready(function () {
 
     $(".datepicker").datepicker({
         // format:  'yyyy-mm-ddT22:12:34.000Z',
+        format: 'yyyy-mm-dd',
         todayBtn: "linked",
         language: "eu",
         autoclose: true,

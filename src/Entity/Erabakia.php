@@ -149,8 +149,10 @@ class Erabakia
     public function getUrl(): ?string
     {
         // Aurreko bertsioan url guztiak /-rekin hasten ziren, eta vichuploadbundle erabiltzean URL-an // gehitzen zuen. Honekin hori ekiditen da.
-        if ( ( $this->url !== '' ) && $this->url[ 0 ] === "/" ) {
-            return substr( $this->url, 1 );
+        if ($this->url) {
+            if ( ( $this->url !== '' ) && $this->url[ 0 ] === "/" ) {
+                return substr( $this->url, 1 );
+            }
         }
 
         return $this->url;
