@@ -66,9 +66,10 @@
                     <th{% if erabakias.isSorted('l.id') %} class="sorted"{% endif %}>
                         {{ knp_pagination_sortable(erabakias, '#', 'l.id') }}
                     </th>
-                    <th{% if erabakias.isSorted('l.liburua.id') %} class="sorted"{% endif %}>
-                        {{ knp_pagination_sortable(erabakias, 'Liburua', 'l.liburua.id') }}
-                    </th>
+{#                    <th{% if erabakias.isSorted('l.liburua') %} class="sorted"{% endif %}>#}
+{#                        {{ knp_pagination_sortable(erabakias, 'Liburua', 'l.liburua') }}#}
+{#                    </th>#}
+                    <th>Liburua</th>
                     <th{% if erabakias.isSorted('l.adata') %} class="sorted"{% endif %}>
                         {{ knp_pagination_sortable(erabakias, 'Data', 'l.adata') }}
                     </th>
