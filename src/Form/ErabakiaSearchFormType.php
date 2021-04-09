@@ -22,7 +22,7 @@ class ErabakiaSearchFormType extends AbstractType
                 'attr' => [
                     'autocomplete' => 'off'
                 ],
-                'label' => 'Sartu bilatu nahi duzun testua: ',
+                'label' => 'form.testua',
                 'mapped' => false,
                 'required' => false
             ])
@@ -31,7 +31,7 @@ class ErabakiaSearchFormType extends AbstractType
                     'class' => 'form-control input-inline datepicker col-4'
                 ],
                 'html5' => false,
-                'label' => 'Hasiera-tik',
+                'label' => 'form.hasiera',
                 'mapped' => false,
                 'required' => false,
                 'widget' => 'single_text',
@@ -41,7 +41,7 @@ class ErabakiaSearchFormType extends AbstractType
                     'class' => 'form-control input-inline datepicker col-4'
                 ],
                 'html5' => false,
-                'label' => 'Hasiera-tik',
+                'label' => 'form.amaiera',
                 'mapped' => false,
                 'required' => false,
                 'widget' => 'single_text',
@@ -51,14 +51,16 @@ class ErabakiaSearchFormType extends AbstractType
                     'class' => 'col-6'
                 ],
                 'class' => Liburua::class,
-                'placeholder' => 'Aukeratu bat',
+                'placeholder' => 'form.aukeratu',
+                'label' => 'form.liburua',
                 'required' => false
             ])
             ->add('Bilatu', SubmitType::class, [
-                'attr' => ['class'=>'btn btn-primary']
+                'attr' => ['class'=>'btn btn-primary'],
+                'label' => 'form.bilatu',
             ])
             ->add('Garbitu', ButtonType::class,[
-                'label' => 'Garbitu',
+                'label' => 'form.garbitu',
                 'attr'  => ['class' => 'btn btn-warning cmdGarbituErabakiaSearchForm']
             ])
         ;

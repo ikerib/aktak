@@ -69,6 +69,62 @@
         <source>sidebar.irten</source>
         <target>Salir</target>
       </trans-unit>
+      <trans-unit id="0a7rZoI" resname="form.testua">
+        <source>form.testua</source>
+        <target>Texto a buscar</target>
+      </trans-unit>
+      <trans-unit id="UD8d09L" resname="form.hasiera">
+        <source>form.hasiera</source>
+        <target>Fecha inicio:</target>
+      </trans-unit>
+      <trans-unit id="lt4eiZW" resname="form.amaiera">
+        <source>form.amaiera</source>
+        <target>Fecha fin:</target>
+      </trans-unit>
+      <trans-unit id="Mk669Bu" resname="form.bilatu">
+        <source>form.bilatu</source>
+        <target>Buscar</target>
+      </trans-unit>
+      <trans-unit id="vRYllDW" resname="form.garbitu">
+        <source>form.garbitu</source>
+        <target>Limpiar</target>
+      </trans-unit>
+      <trans-unit id="gN9VWse" resname="form.liburua">
+        <source>form.liburua</source>
+        <target>Libro</target>
+      </trans-unit>
+      <trans-unit id="WAc48cy" resname="form.aukeratu">
+        <source>form.aukeratu</source>
+        <target>Selecciona uno</target>
+      </trans-unit>
+      <trans-unit id="bcQVGgm" resname="index.num_reg">
+        <source>index.num_reg</source>
+        <target>Nª de registros:</target>
+      </trans-unit>
+      <trans-unit id="TCmhNIy" resname="index.liburua">
+        <source>index.liburua</source>
+        <target>Libro</target>
+      </trans-unit>
+      <trans-unit id="DI6J8Hr" resname="Akta">
+        <source>Akta</source>
+        <target>Acta</target>
+      </trans-unit>
+      <trans-unit id="lbxVOqf" resname="index.fitxategia">
+        <source>index.fitxategia</source>
+        <target>Archivo</target>
+      </trans-unit>
+      <trans-unit id="E5kZRNP" resname="Ez">
+        <source>Ez</source>
+        <target>No</target>
+      </trans-unit>
+      <trans-unit id="KdhqQVe" resname="Bai">
+        <source>Bai</source>
+        <target>Si</target>
+      </trans-unit>
+      <trans-unit id="T_rzJsX" resname="proyect.title">
+        <source>proyect.title</source>
+        <target>Actas</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

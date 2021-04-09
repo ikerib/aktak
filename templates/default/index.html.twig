@@ -12,7 +12,7 @@
                 <div class="card-header">
                     <div class="row">
                         <div class="col-8">
-                            <h1>{{ "sidebar.erabakia" | trans }}</h1>
+                            <h3>{{ "sidebar.erabakia" | trans }}</h3>
                         </div>
                         <div class="col-4 text-right">
                             <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
@@ -60,24 +60,26 @@
 
     <div class="row">
         <div class="col-md-12">
+            <span>{{ "index.num_reg" | trans }} {{ erabakias.getTotalItemCount }}</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
             <table class="table table-striped table-hover table-responsive-sm">
                 <thead>
                 <tr>
                     <th{% if erabakias.isSorted('l.id') %} class="sorted"{% endif %}>
                         {{ knp_pagination_sortable(erabakias, '#', 'l.id') }}
                     </th>
-{#                    <th{% if erabakias.isSorted('l.liburua') %} class="sorted"{% endif %}>#}
-{#                        {{ knp_pagination_sortable(erabakias, 'Liburua', 'l.liburua') }}#}
-{#                    </th>#}
-                    <th>Liburua</th>
+                    <th>{{ "index.liburua" | trans }}</th>
                     <th{% if erabakias.isSorted('l.adata') %} class="sorted"{% endif %}>
                         {{ knp_pagination_sortable(erabakias, 'Data', 'l.adata') }}
                     </th>
                     <th>Gaiak</th>
                     <th>Temas</th>
-                    <th>Fitxategia</th>
+                    <th>{{ "index.fitxategia" | trans }}</th>
                     <th{% if erabakias.isSorted('l.akta') %} class="sorted"{% endif %}>
-                        {{ knp_pagination_sortable(erabakias, 'Akta', 'l.akta') }}
+                        {{ knp_pagination_sortable(erabakias, 'Akta'|trans({foo:'bar'},'messages'), 'l.akta') }}
                     </th>
                 </tr>
                 </thead>
@@ -90,11 +92,12 @@
                         <td>{{ erabakium.gaiak | raw }}</td>
                         <td>{{ erabakium.temas | raw}}</td>
                         <td class="text-center"><a href="{{ vich_uploader_asset(erabakium,'pdfFile') }}" target="_blank"><i class="fas fa-file-pdf"></i></a></td>
-                        <td>{{ erabakium.akta ? 'Bai' : 'Ez' }}</td>
+                        <td>{{ erabakium.akta ? 'Bai' | trans : 'Ez' | trans }}</td>
                     </tr>
                 {% else %}
                     <tr>
-                        <td colspan="9">no records found</td>
+                        <td colspan="9">
+                        </td>
                     </tr>
                 {% endfor %}
                 </tbody>
@@ -103,9 +106,6 @@
     </div>
     <hr>
     <div class="row">
-        <div class="col-4">
-            <span>{{ "Erregistro kopurua: " | trans }} {{ erabakias.getTotalItemCount }}</span>
-        </div>
         <div class="col-4">
             {{ knp_pagination_render(erabakias) }}
         </div>

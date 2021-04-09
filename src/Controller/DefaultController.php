@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Erabakia;
 use App\Form\ErabakiaSearchFormType;
 use App\Repository\ErabakiaRepository;
 use Knp\Component\Pager\PaginatorInterface;
@@ -13,7 +14,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class DefaultController extends AbstractController
 {
     /**
-     * @Route("/", name="default")
+     * @Route("/{_locale}", locale="eu", name="default")
      * @param Request $request
      * @param ErabakiaRepository $erabakiaRepository
      * @param PaginatorInterface $paginator
@@ -32,13 +33,18 @@ class DefaultController extends AbstractController
 
         if ($searchForm->isSubmitted() && $searchForm->isValid()) {
             $filter = $searchForm->getData();
-            $extra['testua'] = $searchForm->get( 'testua' )->getData();
-            $extra['datatik'] = $searchForm->get( 'datatik' )->getData();
-            $extra['datara'] = $searchForm->get( 'datara' )->getData();
+            $extra['testua'] = $searchForm->get('testua')->getData();
+            $extra['datatik'] = $searchForm->get('datatik')->getData();
+            $extra['datara'] = $searchForm->get('datara')->getData();
+            $query = $erabakiaRepository->getAllInternet($filter, $extra);
+        } else {
+            // Zerrenda hutsik erakutsi
+            $filter = new Erabakia();
+            $extra['testua'] = 'Bilaketa testua / Texo a buscar';
+            $extra['datatik'] = '2222-01-01';
+            $extra['datara'] = '3333-01-01';
+            $query = $erabakiaRepository->getAllInternet($filter, $extra);
         }
-
-        $query = $erabakiaRepository->getAllInternet($filter, $extra);
-        $kk = $erabakiaRepository->findAll();
 
         $pagination = $paginator->paginate(
             $query,
