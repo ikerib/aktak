@@ -65,6 +65,14 @@
         <source>Account is locked.</source>
         <target>Kontua blokeatuta dago.</target>
       </trans-unit>
+      <trans-unit id="gd.MOnZ" resname="Too many failed login attempts, please try again later.">
+        <source>Too many failed login attempts, please try again later.</source>
+        <target>Saioa hasteko saio huts gehiegi, saiatu berriro geroago.</target>
+      </trans-unit>
+      <trans-unit id="l9VYRj0" resname="Invalid or expired login link.">
+        <source>Invalid or expired login link.</source>
+        <target>Sartzeko esteka baliogabea edo iraungia.</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

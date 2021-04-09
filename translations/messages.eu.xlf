@@ -65,6 +65,10 @@
         <source>Erregistro kopurua:</source>
         <target>Erregistro kopurua:</target>
       </trans-unit>
+      <trans-unit id="JsP9Y89" resname="sidebar.irten">
+        <source>sidebar.irten</source>
+        <target>Irten</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

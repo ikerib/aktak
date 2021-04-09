@@ -333,6 +333,62 @@
         <source>This Business Identifier Code (BIC) is not associated with IBAN {{ iban }}.</source>
         <target>Banku Identifikazioko Kode hau ez dago lotuta {{ IBAN }} IBAN-rekin.</target>
       </trans-unit>
+      <trans-unit id="2v2xpAh" resname="This value should be valid JSON.">
+        <source>This value should be valid JSON.</source>
+        <target>Balio honek baliozko JSON bat izan behar luke.</target>
+      </trans-unit>
+      <trans-unit id="9CWVEGq" resname="This collection should contain only unique elements.">
+        <source>This collection should contain only unique elements.</source>
+        <target>Bilduma honek elementu bakarrak soilik izan beharko lituzke.</target>
+      </trans-unit>
+      <trans-unit id="WdvZfq." resname="This value should be positive.">
+        <source>This value should be positive.</source>
+        <target>Balio honek positiboa izan beharko luke.</target>
+      </trans-unit>
+      <trans-unit id="ubHMK2q" resname="This value should be either positive or zero.">
+        <source>This value should be either positive or zero.</source>
+        <target>Balio honek positiboa edo zero izan behar luke.</target>
+      </trans-unit>
+      <trans-unit id="IwNTzo_" resname="This value should be negative.">
+        <source>This value should be negative.</source>
+        <target>Balio honek negatiboa izan behar luke.</target>
+      </trans-unit>
+      <trans-unit id="0GfwMfP" resname="This value should be either negative or zero.">
+        <source>This value should be either negative or zero.</source>
+        <target>Balio honek negatiboa edo zero izan behar luke.</target>
+      </trans-unit>
+      <trans-unit id="fs3qQZR" resname="This value is not a valid timezone.">
+        <source>This value is not a valid timezone.</source>
+        <target>Balio hori ez da baliozko ordu-eremua.</target>
+      </trans-unit>
+      <trans-unit id="40dnsod" resname="This password has been leaked in a data breach, it must not be used. Please use another password.">
+        <source>This password has been leaked in a data breach, it must not be used. Please use another password.</source>
+        <target>Pasahitz hori ezin da erabili, beste gune eta aplikazio batzuetako segurtasun-akatsei esker lortutako pasahitz publikoen zerrendan sartuta dagoelako. Mesedez, erabili beste pasahitz bat.</target>
+      </trans-unit>
+      <trans-unit id="VvxxWas" resname="This value should be between {{ min }} and {{ max }}.">
+        <source>This value should be between {{ min }} and {{ max }}.</source>
+        <target>Balio honek {{ min }} eta {{ max }} artean egon behar luke.</target>
+      </trans-unit>
+      <trans-unit id="7g313cV" resname="This value is not a valid hostname.">
+        <source>This value is not a valid hostname.</source>
+        <target>Balio hori ez da ostalari-izen onargarria.</target>
+      </trans-unit>
+      <trans-unit id="xwtBimR" resname="The number of elements in this collection should be a multiple of {{ compared_value }}.">
+        <source>The number of elements in this collection should be a multiple of {{ compared_value }}.</source>
+        <target>Bilduma honetako elementu-kopuruak {{ compared_value }}-ren multiploa izan behar luke.</target>
+      </trans-unit>
+      <trans-unit id="FDRZr.s" resname="This value should satisfy at least one of the following constraints:">
+        <source>This value should satisfy at least one of the following constraints:</source>
+        <target>Balio honek, gutxienez, murrizketa hauetako bat bete behar du:</target>
+      </trans-unit>
+      <trans-unit id="WwY0IGI" resname="Each element of this collection should satisfy its own set of constraints.">
+        <source>Each element of this collection should satisfy its own set of constraints.</source>
+        <target>Bilduma honetako elementu bakoitzak bere murriztapen-multzoa bete behar du.</target>
+      </trans-unit>
+      <trans-unit id="lrbaa8g" resname="This value is not a valid International Securities Identification Number (ISIN).">
+        <source>This value is not a valid International Securities Identification Number (ISIN).</source>
+        <target>Balio hori ez da baliozko baloreen nazioarteko identifikazio-zenbaki bat (ISIN).</target>
+      </trans-unit>
       <trans-unit id=".SEaaBa" resname="This form should not contain extra fields.">
         <source>This form should not contain extra fields.</source>
         <target>Formulario honek ez luke aparteko eremurik eduki behar.</target>
@@ -344,6 +400,126 @@
       <trans-unit id="qwR4y4X" resname="The CSRF token is invalid.">
         <source>The CSRF token is invalid.</source>
         <target>CSRF tokena ez da egokia.</target>
+      </trans-unit>
+      <trans-unit id="eo1zeih" resname="This value is not a valid HTML5 color.">
+        <source>This value is not a valid HTML5 color.</source>
+        <target>Balio hori ez da HTML5 kolore onargarria.</target>
+      </trans-unit>
+      <trans-unit id="dN.ZVc0" resname="Please enter a valid birthdate.">
+        <source>Please enter a valid birthdate.</source>
+        <target>Mesedez, sartu baliozko urtebetetze-eguna.</target>
+      </trans-unit>
+      <trans-unit id="OPymPfZ" resname="The selected choice is invalid.">
+        <source>The selected choice is invalid.</source>
+        <target>Hautatutako aukera ez da egokia.</target>
+      </trans-unit>
+      <trans-unit id="GUH6TYE" resname="The collection is invalid.">
+        <source>The collection is invalid.</source>
+        <target>Bilduma ez da baliozkoa.</target>
+      </trans-unit>
+      <trans-unit id="14il0ha" resname="Please select a valid color.">
+        <source>Please select a valid color.</source>
+        <target>Mesedez, hautatu baliozko kolore bat.</target>
+      </trans-unit>
+      <trans-unit id="4AJRUCC" resname="Please select a valid country.">
+        <source>Please select a valid country.</source>
+        <target>Mesedez, hautatu baliozko herrialde bat.</target>
+      </trans-unit>
+      <trans-unit id="xAI5mrh" resname="Please select a valid currency.">
+        <source>Please select a valid currency.</source>
+        <target>Mesedez, hautatu baliozko moneta bat.</target>
+      </trans-unit>
+      <trans-unit id="c6v9ASZ" resname="Please choose a valid date interval.">
+        <source>Please choose a valid date interval.</source>
+        <target>Mesedez, hautatu baliozko data-tarte bat.</target>
+      </trans-unit>
+      <trans-unit id="2BR60Jg" resname="Please enter a valid date and time.">
+        <source>Please enter a valid date and time.</source>
+        <target>Mesedez, sartu baliozko data eta ordua.</target>
+      </trans-unit>
+      <trans-unit id="ofLBhv0" resname="Please enter a valid date.">
+        <source>Please enter a valid date.</source>
+        <target>Mesedez, sartu baliozko data bat.</target>
+      </trans-unit>
+      <trans-unit id="Xsmm6Mc" resname="Please select a valid file.">
+        <source>Please select a valid file.</source>
+        <target>Mesedez, hautatu baliozko fitxategi bat.</target>
+      </trans-unit>
+      <trans-unit id="Fka0cZD" resname="The hidden field is invalid.">
+        <source>The hidden field is invalid.</source>
+        <target>Eremu ezkutua ez da baliozkoa.</target>
+      </trans-unit>
+      <trans-unit id="69ux5Ml" resname="Please enter an integer.">
+        <source>Please enter an integer.</source>
+        <target>Mesedez, sartu zenbaki oso bat.</target>
+      </trans-unit>
+      <trans-unit id="TQbat_9" resname="Please select a valid language.">
+        <source>Please select a valid language.</source>
+        <target>Mesedez, hautatu baliozko hizkuntza bat.</target>
+      </trans-unit>
+      <trans-unit id="vpa7l8w" resname="Please select a valid locale.">
+        <source>Please select a valid locale.</source>
+        <target>Mesedez, hautatu baliozko eskualde-konfigurazio bat.</target>
+      </trans-unit>
+      <trans-unit id="Gz8pWER" resname="Please enter a valid money amount.">
+        <source>Please enter a valid money amount.</source>
+        <target>Mesedez, sartu baliozko diru-kopuru bat.</target>
+      </trans-unit>
+      <trans-unit id="PRxiOhB" resname="Please enter a number.">
+        <source>Please enter a number.</source>
+        <target>Mesedez, sartu zenbaki bat.</target>
+      </trans-unit>
+      <trans-unit id="seAdKJo" resname="The password is invalid.">
+        <source>The password is invalid.</source>
+        <target>Pasahitza ez da zuzena.</target>
+      </trans-unit>
+      <trans-unit id="A5k0Q20" resname="Please enter a percentage value.">
+        <source>Please enter a percentage value.</source>
+        <target>Mesedez, sartu portzentajezko balio bat.</target>
+      </trans-unit>
+      <trans-unit id="rH6V.WA" resname="The values do not match.">
+        <source>The values do not match.</source>
+        <target>Balioak ez datoz bat.</target>
+      </trans-unit>
+      <trans-unit id="Eopl1Sm" resname="Please enter a valid time.">
+        <source>Please enter a valid time.</source>
+        <target>Mesedez, sartu baliozko ordu bat.</target>
+      </trans-unit>
+      <trans-unit id="ll14Sm9" resname="Please select a valid timezone.">
+        <source>Please select a valid timezone.</source>
+        <target>Mesedez, hautatu baliozko ordu-eremua.</target>
+      </trans-unit>
+      <trans-unit id="1xP1kmd" resname="Please enter a valid URL.">
+        <source>Please enter a valid URL.</source>
+        <target>Mesedez, sartu baliozko URL bat.</target>
+      </trans-unit>
+      <trans-unit id="iMmAsrC" resname="Please enter a valid search term.">
+        <source>Please enter a valid search term.</source>
+        <target>Mesedez, sartu bilaketa-termino onargarri bat.</target>
+      </trans-unit>
+      <trans-unit id="GRMTXRX" resname="Please provide a valid phone number.">
+        <source>Please provide a valid phone number.</source>
+        <target>Mesedez, eman baliozko telefono-zenbaki bat.</target>
+      </trans-unit>
+      <trans-unit id="WkYuMDd" resname="The checkbox has an invalid value.">
+        <source>The checkbox has an invalid value.</source>
+        <target>Egiaztatze-laukiak balio baliogabea du.</target>
+      </trans-unit>
+      <trans-unit id="lY5Mzyl" resname="Please enter a valid email address.">
+        <source>Please enter a valid email address.</source>
+        <target>Mesedez, sartu baliozko helbide elektroniko bat.</target>
+      </trans-unit>
+      <trans-unit id="TzSC4.o" resname="Please select a valid option.">
+        <source>Please select a valid option.</source>
+        <target>Mesedez, hautatu baliozko aukera bat.</target>
+      </trans-unit>
+      <trans-unit id="qGRcTk7" resname="Please select a valid range.">
+        <source>Please select a valid range.</source>
+        <target>Mesedez, hautatu baliozko tarte bat.</target>
+      </trans-unit>
+      <trans-unit id="PU.w6nC" resname="Please enter a valid week.">
+        <source>Please enter a valid week.</source>
+        <target>Mesedez, sartu baliozko aste bat.</target>
       </trans-unit>
     </body>
   </file>
