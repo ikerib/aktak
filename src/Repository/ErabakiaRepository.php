@@ -20,7 +20,7 @@ class ErabakiaRepository extends ServiceEntityRepository
         parent::__construct($registry, Erabakia::class);
     }
 
-    public function getAllQuery($filter, $extra): Query
+    public function base($filter, $extra): \Doctrine\ORM\QueryBuilder
     {
         $qb = $this->createQueryBuilder( 'l' );
 
@@ -39,12 +39,35 @@ class ErabakiaRepository extends ServiceEntityRepository
             }
             if ($filter->getLiburua()) {
                 $qb->leftJoin( 'l.liburua', 'li' )
-                   ->andWhere( 'li.id = :liburuaid' )->setParameter('liburuaid', $filter->getLiburua()->getId());
+                    ->andWhere( 'li.id = :liburuaid' )->setParameter('liburuaid', $filter->getLiburua()->getId());
             }
         }
+        return $qb;
+    }
+
+    public function getAllQuery($filter, $extra): Query
+    {
+        $qb = $this->base($filter, $extra);
+        $qb->orderBy( 'l.id', 'DESC' );
+
+        return $qb->getQuery();
+    }
+
+
+
+    public function getAllInternet($filter, $extra): Query
+    {
+        $qb = $this->base($filter, $extra);
+
+        // Publikoan akta=0 eta orain 50urtekoak soilik erakutsi behar ditu
+        $qb->andWhere('l.akta=0');
+        $berrogehitahamar = new \DateTime(date('Y-m-d'));
+        $berrogehitahamar->modify('-50 year');
+        $qb->andWhere('l.adata >= :berrogehitahamar')->setParameter('berrogehitahamar', $berrogehitahamar);
 
         $qb->orderBy( 'l.id', 'DESC' );
 
         return $qb->getQuery();
     }
+
 }

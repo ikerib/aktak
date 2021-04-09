@@ -37,7 +37,7 @@ class DefaultController extends AbstractController
             $extra['datara'] = $searchForm->get( 'datara' )->getData();
         }
 
-        $query = $erabakiaRepository->getAllQuery($filter, $extra);
+        $query = $erabakiaRepository->getAllInternet($filter, $extra);
         $kk = $erabakiaRepository->findAll();
 
         $pagination = $paginator->paginate(
