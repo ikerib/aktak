@@ -93,5 +93,10 @@ $(document).ready(function () {
         $("#searchForm").submit();
     })
 
+    $('.btnBilatu').on("click", function () {
+        console.log("froga");
+        document.getElementById('searchForm').submit();
+        return false;
+    });
 });
 

@@ -17,13 +17,13 @@
 
         <ul class="nav navbar-nav ezker-borobil">
             {% if app.request.locale == 'es' %}
-                <li class="nav-item">
-                    <a class="nav-link"  href="{{ path('default', {'_locale': 'eu'}) }}"><i class="fas fa-globe-africa"></i> &nbsp;Euskara</a>
-                </li>
+{#                <li class="nav-item">#}
+{#                    <a class="nav-link"  href="{{ path('default', {'_locale': 'eu'}) }}"><i class="fas fa-globe-africa"></i> &nbsp;Euskara</a>#}
+{#                </li>#}
             {% else %}
-                <li class="nav-item">
-                    <a class="nav-link"  href="{{ path('default', {'_locale': 'es'}) }}"><i class="fas fa-globe-africa"></i> &nbsp;Castellano</a>
-                </li>
+{#                <li class="nav-item">#}
+{#                    <a class="nav-link"  href="{{ path('default', {'_locale': 'es'}) }}"><i class="fas fa-globe-africa"></i> &nbsp;Castellano</a>#}
+{#                </li>#}
             {% endif %}
 
             {% if is_granted('ROLE_PREVIOUS_ADMIN') %}

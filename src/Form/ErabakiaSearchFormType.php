@@ -56,7 +56,7 @@ class ErabakiaSearchFormType extends AbstractType
                 'required' => false
             ])
             ->add('Bilatu', SubmitType::class, [
-                'attr' => ['class'=>'btn btn-primary'],
+                'attr' => ['class'=>'btn btn-primary btnBilatu'],
                 'label' => 'form.bilatu',
             ])
             ->add('Garbitu', ButtonType::class,[
