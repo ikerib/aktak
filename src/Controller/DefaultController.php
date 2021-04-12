@@ -24,7 +24,7 @@ class DefaultController extends AbstractController
     {
         $searchForm = $this->createForm( ErabakiaSearchFormType::class, null, [
             'action' => $this->generateUrl( 'default' ),
-            'method' => 'GET',
+            'method' => 'POST',
         ] );
 
         $searchForm->handleRequest( $request );
