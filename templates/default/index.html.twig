@@ -24,15 +24,15 @@
                 <div class="collapse show" id="collapseExample">
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-2"></div>
-                            <div class="col-8">
+                            <div class="col-4"></div>
+                            <div class="col-4">
+
                                 {{ form_start(searchform, { 'attr' : { 'class': 'form-bg', 'id': 'searchForm' }}) }}
+
                                 {{ form_row(searchform.testua) }}
 
                                 {{ form_row(searchform.datatik) }}
                                 {{ form_row(searchform.datara) }}
-
-                                {{ form_row(searchform.liburua) }}
 
                                 <div class="row">
                                     <div class="col-4">&nbsp;</div>
@@ -48,7 +48,7 @@
                                 {{ form_rest(searchform) }}
                                 {{ form_end(searchform) }}
                             </div>
-                            <div class="col-2"></div>
+                            <div class="col-4"></div>
                         </div>
                     </div>
                 </div>
@@ -60,7 +60,8 @@
 
     <div class="row">
         <div class="col-md-12">
-            <span>{{ "index.num_reg" | trans }} {{ erabakias.getTotalItemCount }}</span>
+{#            <span>{{ "index.num_reg" | trans }} {{ erabakias.getTotalItemCount }}</span>#}
+            <span>{{ "index.num_reg" | trans }} {{ erabakias | length }}</span>
         </div>
     </div>
     <div class="row">
@@ -68,18 +69,18 @@
             <table class="table table-striped table-hover table-responsive-sm">
                 <thead>
                 <tr>
-                    <th{% if erabakias.isSorted('l.id') %} class="sorted"{% endif %}>
-                        {{ knp_pagination_sortable(erabakias, '#', 'l.id') }}
+                    <th>
+                        {{ '#' }}
                     </th>
                     <th>{{ "index.liburua" | trans }}</th>
-                    <th{% if erabakias.isSorted('l.adata') %} class="sorted"{% endif %}>
-                        {{ knp_pagination_sortable(erabakias, 'Data', 'l.adata') }}
+                    <th>
+                        {{ 'Data' }}
                     </th>
                     <th>Gaiak</th>
                     <th>Temas</th>
                     <th>{{ "index.fitxategia" | trans }}</th>
-                    <th{% if erabakias.isSorted('l.akta') %} class="sorted"{% endif %}>
-                        {{ knp_pagination_sortable(erabakias, 'Akta'|trans({foo:'bar'},'messages'), 'l.akta') }}
+                    <th>
+                        {{ 'Akta'|trans({foo:'bar'},'messages') }}
                     </th>
                 </tr>
                 </thead>
@@ -105,10 +106,10 @@
         </div>
     </div>
     <hr>
-    <div class="row">
-        <div class="col-4">
-            {{ knp_pagination_render(erabakias) }}
-        </div>
-        <div class="col-4"></div>
-    </div>
+{#    <div class="row">#}
+{#        <div class="col-4">#}
+{#            {{ knp_pagination_render(erabakias) }}#}
+{#        </div>#}
+{#        <div class="col-4"></div>#}
+{#    </div>#}
 {% endblock %}

@@ -13,7 +13,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class ErabakiaSearchFormType extends AbstractType
+class AdminErabakiaSearchFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
@@ -48,6 +48,15 @@ class ErabakiaSearchFormType extends AbstractType
                 'mapped' => false,
                 'required' => false,
                 'widget' => 'single_text',
+            ])
+            ->add('liburua', EntityType::class, [
+                'attr' => [
+                    'class' => 'col-6'
+                ],
+                'class' => Liburua::class,
+                'placeholder' => 'form.aukeratu',
+                'label' => 'form.liburua',
+                'required' => false
             ])
             ->add('Bilatu', SubmitType::class, [
                 'attr' => ['class'=>'btn btn-primary btnBilatu'],

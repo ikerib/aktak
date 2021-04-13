@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Erabakia;
+use App\Form\AdminErabakiaSearchFormType;
 use App\Form\ErabakiaSearchFormType;
 use App\Form\ErabakiaType;
 use App\Form\LiburuaSearchFormType;
@@ -28,7 +29,7 @@ class ErabakiaController extends AbstractController
      */
     public function index(Request $request, ErabakiaRepository $erabakiaRepository, PaginatorInterface $paginator): Response
     {
-        $searchForm = $this->createForm( ErabakiaSearchFormType::class, null, [
+        $searchForm = $this->createForm( AdminErabakiaSearchFormType::class, null, [
             'action' => $this->generateUrl( 'erabakia_index' ),
             'method' => 'GET',
         ] );

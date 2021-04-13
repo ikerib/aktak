@@ -17,10 +17,9 @@ class DefaultController extends AbstractController
      * @Route("/{_locale}", locale="eu", name="default")
      * @param Request $request
      * @param ErabakiaRepository $erabakiaRepository
-     * @param PaginatorInterface $paginator
      * @return Response
      */
-    public function index(Request $request, ErabakiaRepository $erabakiaRepository, PaginatorInterface $paginator): Response
+    public function index(Request $request, ErabakiaRepository $erabakiaRepository): Response
     {
         $searchForm = $this->createForm( ErabakiaSearchFormType::class, null, [
             'action' => $this->generateUrl( 'default' ),
@@ -37,8 +36,9 @@ class DefaultController extends AbstractController
             $extra['datatik'] = $searchForm->get('datatik')->getData();
             $extra['datara'] = $searchForm->get('datara')->getData();
             $query = $erabakiaRepository->getAllInternet($filter, $extra);
-        } else {
-            // Zerrenda hutsik erakutsi
+        }
+
+        if (!isset($query)){
             $filter = new Erabakia();
             $extra['testua'] = 'Bilaketa testua / Texo a buscar';
             $extra['datatik'] = '2222-01-01';
@@ -46,23 +46,11 @@ class DefaultController extends AbstractController
             $query = $erabakiaRepository->getAllInternet($filter, $extra);
         }
 
-        $pagination = $paginator->paginate(
-            $query,
-            $request->query->getInt('page', 1),
-            10
-        );
-
+        $erabakias = $query->getResult();
         return $this->render( 'default/index.html.twig' , [
-            'erabakias'      => $pagination,
+            'erabakias'      => $erabakias,
             'searchform'    => $searchForm->createView()
         ]);
     }
 
-    /**
-     * @Route("/vue", name="vue")
-     */
-    public function vue(): Response
-    {
-        return $this->render( 'vue.html.twig' );
-    }
 }
