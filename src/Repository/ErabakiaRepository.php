@@ -62,7 +62,7 @@ class ErabakiaRepository extends ServiceEntityRepository
 
         // Publikoan akta=0 eta orain 50urtekoak soilik erakutsi behar ditu
 //        $qb->andWhere('l.akta=1 OR l.akta IS NULL');
-//        $qb->andWhere('l.akta=1');
+        $qb->andWhere('l.akta=1');
         $berrogehitahamar = new \DateTime(date('Y-m-d'));
         $berrogehitahamar->modify('-50 year');
         $qb->andWhere('l.adata <= :berrogehitahamar')->setParameter('berrogehitahamar', $berrogehitahamar);
