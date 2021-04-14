@@ -7,6 +7,7 @@ use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\Query;
 use Doctrine\Persistence\ManagerRegistry;
 
+
 /**
  * @method Erabakia|null find($id, $lockMode = null, $lockVersion = null)
  * @method Erabakia|null findOneBy(array $criteria, array $orderBy = null)
@@ -28,10 +29,11 @@ class ErabakiaRepository extends ServiceEntityRepository
 
         if ( $filter ) {
             if ( $extra['testua'] !== null ) {
-                $qb->orWhere( 'l.gaiak LIKE :testua' )->setParameter( 'testua', '%' . $extra[ 'testua' ] . '%' );
-                $qb->orWhere( 'l.temas LIKE :testua' )->setParameter( 'testua', '%' . $extra[ 'testua' ] . '%' );
-                $qb->orWhere( 'l.oharrak LIKE :testua' )->setParameter( 'testua', '%' . $extra[ 'testua' ] . '%' );
-                $qb->orWhere( 'l.observaciones LIKE :testua' )->setParameter( 'testua', '%' . $extra[ 'testua' ] . '%' );
+//                $qb->orWhere( 'l.gaiak LIKE :testua' )->setParameter( 'testua', '%' . $extra[ 'testua' ] . '%' );
+//                $qb->orWhere( 'l.temas LIKE :testua' )->setParameter( 'testua', '%' . $extra[ 'testua' ] . '%' );
+//                $qb->orWhere( 'l.oharrak LIKE :testua' )->setParameter( 'testua', '%' . $extra[ 'testua' ] . '%' );
+//                $qb->orWhere( 'l.observaciones LIKE :testua' )->setParameter( 'testua', '%' . $extra[ 'testua' ] . '%' );
+                $qb->orWhere('MATCH_AGAINST(l.gaiak, l.temas,l.oharrak, l.observaciones) AGAINST (:searchterm boolean) > 0')->setParameter('searchterm',$extra[ 'testua' ]);
             }
             if ($extra['datatik'] !== null) {
                 $qb->andWhere( 'l.adata >= :hasiera' )->setParameter( 'hasiera', $extra['datatik'] );

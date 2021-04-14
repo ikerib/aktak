@@ -2,55 +2,35 @@
 
 {% extends 'base_no_sidebar.html.twig' %}
 
-{% block title %}Erabakia index{% endblock %}
+{% block title %}{% endblock %}
+{% block navbar %}
+{% endblock %}
 
 {% block body %}
 
     <div class="row">
         <div class="col-md-12">
-            <div class="card border-light">
-                <div class="card-header">
+            <div class="card-body">
+                <div class="row">
+
+                    {{ form_start(searchform, { 'attr' : { 'class': 'form-bg col-12', 'id': 'searchForm' }}) }}
+
+                    {{ form_row(searchform.testua) }}
+
+                    {{ form_row(searchform.datatik) }}
+                    {{ form_row(searchform.datara) }}
+
                     <div class="row">
-                        <div class="col-8">
-                            <h3>{{ "sidebar.erabakia" | trans }}</h3>
+                        <div class="col-6 text-center">
+                            {{ form_row(searchform.Garbitu) }}
                         </div>
-                        <div class="col-4 text-right">
-                            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                                <i class="fas fa-search"></i>
-                            </button>
+                        <div class="col-6 text-center">
+                            {{ form_row(searchform.Bilatu) }}
                         </div>
                     </div>
-                </div>
-                <div class="collapse show" id="collapseExample">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-4"></div>
-                            <div class="col-4">
 
-                                {{ form_start(searchform, { 'attr' : { 'class': 'form-bg', 'id': 'searchForm' }}) }}
-
-                                {{ form_row(searchform.testua) }}
-
-                                {{ form_row(searchform.datatik) }}
-                                {{ form_row(searchform.datara) }}
-
-                                <div class="row">
-                                    <div class="col-4">&nbsp;</div>
-                                    <div class="col-2">
-                                        {{ form_row(searchform.Garbitu) }}
-                                    </div>
-                                    <div class="col-2">
-                                        {{ form_row(searchform.Bilatu) }}
-                                    </div>
-                                    <div class="col-4">&nbsp;</div>
-                                </div>
-
-                                {{ form_rest(searchform) }}
-                                {{ form_end(searchform) }}
-                            </div>
-                            <div class="col-4"></div>
-                        </div>
-                    </div>
+                    {{ form_rest(searchform) }}
+                    {{ form_end(searchform) }}
                 </div>
             </div>
         </div>
@@ -60,7 +40,6 @@
 
     <div class="row">
         <div class="col-md-12">
-{#            <span>{{ "index.num_reg" | trans }} {{ erabakias.getTotalItemCount }}</span>#}
             <span>{{ "index.num_reg" | trans }} {{ erabakias | length }}</span>
         </div>
     </div>
@@ -70,14 +49,14 @@
                 <thead>
                 <tr>
                     <th>
-                        {{ '#' }}
+                        {{ 'index.num' | trans }}
                     </th>
                     <th>{{ "index.liburua" | trans }}</th>
                     <th>
-                        {{ 'Data' }}
+                        {{ 'index.data' | trans }}
                     </th>
-                    <th>Gaiak</th>
-                    <th>Temas</th>
+                    <th>{{ "index.gaiak" | trans }}</th>
+                    <th>{{ "index.temas" | trans }}</th>
                     <th>{{ "index.fitxategia" | trans }}</th>
                     <th>
                         {{ 'Akta'|trans({foo:'bar'},'messages') }}

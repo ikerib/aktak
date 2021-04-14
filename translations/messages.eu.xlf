@@ -71,15 +71,15 @@
       </trans-unit>
       <trans-unit id="0a7rZoI" resname="form.testua">
         <source>form.testua</source>
-        <target>Bilaketa testua</target>
+        <target>Testua</target>
       </trans-unit>
       <trans-unit id="UD8d09L" resname="form.hasiera">
         <source>form.hasiera</source>
-        <target>Hasiera data:</target>
+        <target>Hasiera</target>
       </trans-unit>
       <trans-unit id="lt4eiZW" resname="form.amaiera">
         <source>form.amaiera</source>
-        <target>Amaiera data:</target>
+        <target>Amaiera</target>
       </trans-unit>
       <trans-unit id="Mk669Bu" resname="form.bilatu">
         <source>form.bilatu</source>
@@ -125,6 +125,22 @@
         <source>proyect.title</source>
         <target>Aktak</target>
       </trans-unit>
+        <trans-unit id="0">
+            <source>index.num</source>
+            <target>Zkia.</target>
+        </trans-unit>
+        <trans-unit id="1">
+            <source>index.data</source>
+            <target>Data</target>
+        </trans-unit>
+        <trans-unit id="2">
+            <source>index.gaiak</source>
+            <target>Edukia</target>
+        </trans-unit>
+        <trans-unit id="3">
+            <source>index.temas</source>
+            <target>Contenido</target>
+        </trans-unit>
     </body>
   </file>
 </xliff>

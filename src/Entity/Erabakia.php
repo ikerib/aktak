@@ -8,6 +8,7 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\HttpFoundation\File\File;
 
 /**
+ * @ORM\Table(name="erabakia", indexes={@ORM\Index(columns={"gaiak", "temas", "oharrak", "observaciones"}, flags={"fulltext"})})
  * @ORM\Entity(repositoryClass=ErabakiaRepository::class)
  * @Vich\Uploadable()
  */

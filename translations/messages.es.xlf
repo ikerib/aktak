@@ -71,15 +71,15 @@
       </trans-unit>
       <trans-unit id="0a7rZoI" resname="form.testua">
         <source>form.testua</source>
-        <target>Texto a buscar</target>
+        <target>Texto</target>
       </trans-unit>
       <trans-unit id="UD8d09L" resname="form.hasiera">
         <source>form.hasiera</source>
-        <target>Fecha inicio:</target>
+        <target>Inicio</target>
       </trans-unit>
       <trans-unit id="lt4eiZW" resname="form.amaiera">
         <source>form.amaiera</source>
-        <target>Fecha fin:</target>
+        <target>Fin</target>
       </trans-unit>
       <trans-unit id="Mk669Bu" resname="form.bilatu">
         <source>form.bilatu</source>
@@ -125,6 +125,22 @@
         <source>proyect.title</source>
         <target>Actas</target>
       </trans-unit>
+        <trans-unit id="0">
+            <source>index.num</source>
+            <target>Nº</target>
+        </trans-unit>
+        <trans-unit id="1">
+            <source>index.data</source>
+            <target>Fecha</target>
+        </trans-unit>
+        <trans-unit id="2">
+            <source>index.gaiak</source>
+            <target>Edukia</target>
+        </trans-unit>
+        <trans-unit id="3">
+            <source>index.temas</source>
+            <target>Contenido</target>
+        </trans-unit>
     </body>
   </file>
 </xliff>

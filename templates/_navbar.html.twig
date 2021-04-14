@@ -1,6 +1,6 @@
 {#<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">#}
 <nav class="navbar navbar-expand-md navbar-dark p-0 {% if is_granted('ROLE_PREVIOUS_ADMIN') %} bg-danger {% else %}bg-primary {% endif %}fixed-top">
-    <a class="navbar-brand col-md-2" href="#">AKTAK</a>
+    <a class="navbar-brand col-md-2" href="#">{% block navbar_title %}AKTAK{% endblock %}</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>

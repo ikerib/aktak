@@ -29,7 +29,7 @@ class ErabakiaSearchFormType extends AbstractType
             ])
             ->add('datatik',DateType::class, [
                 'attr' => [
-                    'class' => 'form-control input-inline datepicker ',
+                    'class' => 'form-control input-inline datepicker col-5',
                     'autocomplete' => 'off'
                 ],
                 'html5' => false,
@@ -40,7 +40,7 @@ class ErabakiaSearchFormType extends AbstractType
             ])
             ->add('datara',DateType::class, [
                 'attr' => [
-                    'class' => 'form-control input-inline datepicker',
+                    'class' => 'form-control input-inline datepicker col-5',
                     'autocomplete' => 'off'
                 ],
                 'html5' => false,
