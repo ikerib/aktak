@@ -5,7 +5,7 @@ th, td { background: #fff; padding: 8px 16px; }
 
 .tableFixHead {
     overflow: auto;
-    height: 100px;
+    height: 300px;
 }
 
 .tableFixHead thead th {
@@ -30,4 +30,8 @@ th, td { background: #fff; padding: 8px 16px; }
 }
 [role="main"] {
     padding-top: 0px !important; /* Space for fixed navbar */
+}
+
+.thData {
+    width: 10% !important;
 }
