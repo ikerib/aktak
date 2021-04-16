@@ -10,7 +10,7 @@
 
     <div class="row">
         <div class="col-md-12">
-            <div class="card-body">
+            <div class="card-body no-padding-top">
                 <div class="row">
 
                     {{ form_start(searchform, { 'attr' : { 'class': 'form-bg col-12', 'id': 'searchForm' }}) }}
@@ -58,9 +58,6 @@
                     <th>{{ "index.gaiak" | trans }}</th>
                     <th>{{ "index.temas" | trans }}</th>
                     <th>{{ "index.fitxategia" | trans }}</th>
-                    <th>
-                        {{ 'Akta'|trans({foo:'bar'},'messages') }}
-                    </th>
                 </tr>
                 </thead>
                 <tbody>
@@ -71,8 +68,11 @@
                         <td>{{ erabakium.adata ? erabakium.adata|date('Y-m-d') : '' }}</td>
                         <td>{{ erabakium.gaiak | raw }}</td>
                         <td>{{ erabakium.temas | raw}}</td>
-                        <td class="text-center"><a href="{{ vich_uploader_asset(erabakium,'pdfFile') }}" target="_blank"><i class="fas fa-file-pdf"></i></a></td>
-                        <td>{{ erabakium.akta ? 'Bai' | trans : 'Ez' | trans }}</td>
+                        <td class="text-center">
+                            <a href="{{ vich_uploader_asset(erabakium,'pdfFile') }}" target="_blank">
+                                <i class="fas fa-file-pdf ikonoa"></i>
+                            </a>
+                        </td>
                     </tr>
                 {% else %}
                     <tr>
@@ -84,11 +84,4 @@
             </table>
         </div>
     </div>
-    <hr>
-{#    <div class="row">#}
-{#        <div class="col-4">#}
-{#            {{ knp_pagination_render(erabakias) }}#}
-{#        </div>#}
-{#        <div class="col-4"></div>#}
-{#    </div>#}
 {% endblock %}
