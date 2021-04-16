@@ -2,6 +2,11 @@
 
 {% extends 'base_no_sidebar.html.twig' %}
 
+    {% block stylesheets %}
+        {{ parent() }}
+        {{ encore_entry_link_tags('cssIframe') }}
+    {% endblock %}
+
 {% block title %}{% endblock %}
 {% block navbar %}
 {% endblock %}

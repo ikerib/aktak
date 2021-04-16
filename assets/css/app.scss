@@ -85,14 +85,4 @@ body {
     //border: #808080 1px solid;
 }
 
-.main {
-    padding-top: 0px !important;
-}
-@media (min-width: 768px) {
-    [role="main"] {
-        padding-top: 0px !important; /* Space for fixed navbar */
-    }
-}
-.no-padding-top {
-    padding-top: 0px !important;
-}
+

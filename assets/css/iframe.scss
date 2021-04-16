@@ -1,0 +1,33 @@
+
+table { border-collapse: collapse; width: 100%; }
+th, td { background: #fff; padding: 8px 16px; }
+
+
+.tableFixHead {
+    overflow: auto;
+    height: 100px;
+}
+
+.tableFixHead thead th {
+    position: sticky;
+    top: 0;
+}
+
+.ikonoa {
+    font-size: 18px !important;
+}
+
+.main {
+    padding-top: 0px !important;
+}
+@media (min-width: 768px) {
+    [role="main"] {
+        padding-top: 0px !important; /* Space for fixed navbar */
+    }
+}
+.no-padding-top {
+    padding-top: 0px !important;
+}
+[role="main"] {
+    padding-top: 0px !important; /* Space for fixed navbar */
+}

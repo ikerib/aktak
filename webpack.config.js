@@ -8,6 +8,7 @@ Encore
     .setOutputPath('public/build/')
     .setPublicPath('/build')
     .addStyleEntry('cssApp', './assets/css/app.scss')
+    .addStyleEntry('cssIframe', './assets/css/iframe.scss')
     .addEntry('jsApp', './assets/js/app.js')
     .addEntry('jsVue', './assets/js/vue/app.js')
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
