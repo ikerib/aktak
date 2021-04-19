@@ -28,12 +28,11 @@ class ErabakiaRepository extends ServiceEntityRepository
         $qb->leftJoin('l.liburua', 'li');
 
         if ( $filter ) {
+            if ($extra['testua'] === 'Bilaketa testua / Texo a buscar') {
+                $extra['testua'] = null;
+            }
             if ( $extra['testua'] !== null ) {
-//                $qb->orWhere( 'l.gaiak LIKE :testua' )->setParameter( 'testua', '%' . $extra[ 'testua' ] . '%' );
-//                $qb->orWhere( 'l.temas LIKE :testua' )->setParameter( 'testua', '%' . $extra[ 'testua' ] . '%' );
-//                $qb->orWhere( 'l.oharrak LIKE :testua' )->setParameter( 'testua', '%' . $extra[ 'testua' ] . '%' );
-//                $qb->orWhere( 'l.observaciones LIKE :testua' )->setParameter( 'testua', '%' . $extra[ 'testua' ] . '%' );
-                $qb->orWhere('MATCH_AGAINST(l.gaiak, l.temas,l.oharrak, l.observaciones) AGAINST (:searchterm boolean) > 0')->setParameter('searchterm',$extra[ 'testua' ]);
+                $qb->andWhere('MATCH_AGAINST(l.gaiak, l.temas,l.oharrak, l.observaciones) AGAINST (:searchterm boolean) > 0')->setParameter('searchterm',$extra[ 'testua' ]);
             }
             if ($extra['datatik'] !== null) {
                 $qb->andWhere( 'l.adata >= :hasiera' )->setParameter( 'hasiera', $extra['datatik'] );
@@ -64,12 +63,23 @@ class ErabakiaRepository extends ServiceEntityRepository
 
         // Publikoan akta=0 eta orain 50urtekoak soilik erakutsi behar ditu
 //        $qb->andWhere('l.akta=1 OR l.akta IS NULL');
-        $qb->andWhere('l.akta=1');
+//        $qb->andWhere('l.akta=1');
         $berrogehitahamar = new \DateTime(date('Y-m-d'));
         $berrogehitahamar->modify('-50 year');
-        $qb->andWhere('l.adata <= :berrogehitahamar')->setParameter('berrogehitahamar', $berrogehitahamar);
-
-        $qb->orderBy( 'l.adata', 'ASC' );
+//        $qb->andWhere('l.adata <= :berrogehitahamar')->setParameter('berrogehitahamar', $berrogehitahamar);
+//        $q->addWhere('e.id NOT IN (
+//	        SELECT a.id FROM erabakia a WHERE ((a.akta = 0) AND (a.adata >= ?)))' , $date->format('Y-m-d')
+//        );
+//    }
+        $kendu = $this->createQueryBuilder('ee')->andWhere('ee.adata >= :adata')->andWhere('ee.akta=0');
+//        $qb->andWhere('
+//            l.id NOT IN (
+//                SELECT a.id
+//                FROM erabakia a
+//                WHERE ((a.akta = 0) AND (a.adata >= :adata)))
+//        ')->setParameter('adata', $berrogehitahamar);
+        $qb->andWhere($qb->expr()->notIn('l.id', $kendu->getDQL()))->setParameter('adata', $berrogehitahamar);
+        $qb->orderBy( 'l.adata', 'DESC' );
 
         return $qb->getQuery();
     }
