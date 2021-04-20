@@ -107,7 +107,6 @@ $(document).ready(function () {
     if (searchText.length > 0) {
         let terms = searchText.split(" ");
         terms.forEach(function(term){
-            console.log(term);
             const regex = new RegExp(term, 'gi');
             let text = $box.innerHTML;
             // text = text.replace(/(<mark class="highlight">|<\/mark>)/gim, '');
