@@ -33,12 +33,30 @@ $(document).ready(function () {
     $('[data-toggle="popover"]').popover();
 
     $('.myselect2').select2();
+
+    // Highlight-a egiteko eremua
+    const $box = document.getElementById('erabakiakTable');
+    // biilaketa testua
+    let searchText = $('#erabakia_search_form_testua').val();
+    // kendu karaktere bereziak +,- eta horrelakoak
+    searchText = searchText.replace(/[^a-zA-Z ]/g, "");
+    if (searchText.length > 0) {
+        let terms = searchText.split(" ");
+        terms.forEach(function(term){
+            const regex = new RegExp(term, 'gi');
+            let text = $box.innerHTML;
+            // text = text.replace(/(<mark class="highlight">|<\/mark>)/gim, '');
+            const newText = text.replace(regex, '<mark class="highlight">$&</mark>');
+            $box.innerHTML = newText;
+        });
+    }
+
     const appLocale = $('#app_locale').val();
     const datatablesLocaleURL = "/build/datatables/" + appLocale + ".json";
 
     $('.mydatatable').DataTable({
         language: {
-            url: 'eu'
+            url: '//cdn.datatables.net/plug-ins/1.10.24/i18n/Basque.json'
         },
         "paging": true,
         "ordering": true,
@@ -97,24 +115,5 @@ $(document).ready(function () {
         document.getElementById('searchForm').submit();
         return false;
     });
-
-    // Highlight-a egiteko eremua
-    const $box = document.getElementById('erabakiakTable');
-    // biilaketa testua
-    let searchText = $('#erabakia_search_form_testua').val();
-    // kendu karaktere bereziak +,- eta horrelakoak
-    searchText = searchText.replace(/[^a-zA-Z ]/g, "");
-    if (searchText.length > 0) {
-        let terms = searchText.split(" ");
-        terms.forEach(function(term){
-            const regex = new RegExp(term, 'gi');
-            let text = $box.innerHTML;
-            // text = text.replace(/(<mark class="highlight">|<\/mark>)/gim, '');
-            const newText = text.replace(regex, '<mark class="highlight">$&</mark>');
-            $box.innerHTML = newText;
-        });
-
-    }
-
 });
 
