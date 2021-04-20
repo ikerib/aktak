@@ -60,24 +60,9 @@ class ErabakiaRepository extends ServiceEntityRepository
     public function getAllInternet($filter, $extra): Query
     {
         $qb = $this->base($filter, $extra);
-
-        // Publikoan akta=0 eta orain 50urtekoak soilik erakutsi behar ditu
-//        $qb->andWhere('l.akta=1 OR l.akta IS NULL');
-//        $qb->andWhere('l.akta=1');
         $berrogehitahamar = new \DateTime(date('Y-m-d'));
         $berrogehitahamar->modify('-50 year');
-//        $qb->andWhere('l.adata <= :berrogehitahamar')->setParameter('berrogehitahamar', $berrogehitahamar);
-//        $q->addWhere('e.id NOT IN (
-//	        SELECT a.id FROM erabakia a WHERE ((a.akta = 0) AND (a.adata >= ?)))' , $date->format('Y-m-d')
-//        );
-//    }
         $kendu = $this->createQueryBuilder('ee')->andWhere('ee.adata >= :adata')->andWhere('ee.akta=0');
-//        $qb->andWhere('
-//            l.id NOT IN (
-//                SELECT a.id
-//                FROM erabakia a
-//                WHERE ((a.akta = 0) AND (a.adata >= :adata)))
-//        ')->setParameter('adata', $berrogehitahamar);
         $qb->andWhere($qb->expr()->notIn('l.id', $kendu->getDQL()))->setParameter('adata', $berrogehitahamar);
         $qb->orderBy( 'l.adata', 'DESC' );
 

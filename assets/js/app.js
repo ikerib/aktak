@@ -22,7 +22,6 @@ require('select2');
 import '../css/app.scss';
 
 $(document).ready(function () {
-
     $(".datepicker").datepicker({
         // format:  'yyyy-mm-ddT22:12:34.000Z',
         format: 'yyyy-mm-dd',
@@ -39,7 +38,7 @@ $(document).ready(function () {
 
     $('.mydatatable').DataTable({
         language: {
-            url: datatablesLocaleURL
+            url: 'eu'
         },
         "paging": true,
         "ordering": true,
@@ -98,5 +97,25 @@ $(document).ready(function () {
         document.getElementById('searchForm').submit();
         return false;
     });
+
+    // Highlight-a egiteko eremua
+    const $box = document.getElementById('erabakiakTable');
+    // biilaketa testua
+    let searchText = $('#erabakia_search_form_testua').val();
+    // kendu karaktere bereziak +,- eta horrelakoak
+    searchText = searchText.replace(/[^a-zA-Z ]/g, "");
+    if (searchText.length > 0) {
+        let terms = searchText.split(" ");
+        terms.forEach(function(term){
+            console.log(term);
+            const regex = new RegExp(term, 'gi');
+            let text = $box.innerHTML;
+            // text = text.replace(/(<mark class="highlight">|<\/mark>)/gim, '');
+            const newText = text.replace(regex, '<mark class="highlight">$&</mark>');
+            $box.innerHTML = newText;
+        });
+
+    }
+
 });
 

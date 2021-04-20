@@ -5,6 +5,7 @@
     {% block stylesheets %}
         {{ parent() }}
         {{ encore_entry_link_tags('cssIframe') }}
+
     {% endblock %}
 
 {% block title %}{% endblock %}
@@ -50,7 +51,7 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-            <table class="table table-striped table-hover table-responsive-sm tableFixHead">
+            <table id="erabakiakTable" class="table table-striped table-hover table-responsive-sm tableFixHead mydatatableeee">
                 <thead>
                 <tr>
                     <th class="thId">
@@ -89,4 +90,11 @@
             </table>
         </div>
     </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+{#    {{ encore_entry_script_tags('highlight') }}#}
+    <script>
+
+    </script>
 {% endblock %}

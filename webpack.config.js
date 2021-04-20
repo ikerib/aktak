@@ -11,6 +11,7 @@ Encore
     .addStyleEntry('cssIframe', './assets/css/iframe.scss')
     .addEntry('jsApp', './assets/js/app.js')
     .addEntry('jsVue', './assets/js/vue/app.js')
+    // .addEntry('highlight', './assets/js/jquery.highlight.js')
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
     .splitEntryChunks()
     // will require an extra script tag for runtime.js
