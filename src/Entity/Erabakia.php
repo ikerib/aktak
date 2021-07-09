@@ -22,12 +22,12 @@ class Erabakia
     private $id;
 
     /**
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="date", nullable=true)
      */
     private $adata;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", nullable=true)
      */
     private $gaiak;
 
@@ -36,11 +36,11 @@ class Erabakia
      */
     private $temas;
 
-    /**
-     * @Vich\UploadableField(mapping="pdf_mapping", fileNameProperty="url")
-     * @var File
-     */
-    private $pdfFile;
+//    /**
+//     * @Vich\UploadableField(mapping="pdf_mapping", fileNameProperty="url")
+//     * @var File
+//     */
+//    private $pdfFile;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)

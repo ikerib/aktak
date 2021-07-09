@@ -76,6 +76,8 @@ class ErabakiaController extends AbstractController
             $entityManager->flush();
 
             return $this->redirectToRoute('erabakia_index');
+        } else {
+            dump($form);
         }
 
         return $this->render('erabakia/new.html.twig', [

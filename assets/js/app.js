@@ -17,11 +17,13 @@ import "bootstrap-datepicker/dist/locales/bootstrap-datepicker.eu.min"
 const routes = require('../../public/js/fos_js_routes.json');
 import Routing from '../../vendor/friendsofsymfony/jsrouting-bundle/Resources/public/js/router.min.js';
 Routing.setRoutingData(routes);
+import bsCustomFileInput from "bs-custom-file-input";
 
 require('select2');
 import '../css/app.scss';
 
 $(document).ready(function () {
+    bsCustomFileInput.init();
     $(".datepicker").datepicker({
         // format:  'yyyy-mm-ddT22:12:34.000Z',
         format: 'yyyy-mm-dd',
@@ -38,18 +40,21 @@ $(document).ready(function () {
     const $box = document.getElementById('erabakiakTable');
     // biilaketa testua
     let searchText = $('#erabakia_search_form_testua').val();
-    // kendu karaktere bereziak +,- eta horrelakoak
-    searchText = searchText.replace(/[^a-zA-Z ]/g, "");
-    if (searchText.length > 0) {
-        let terms = searchText.split(" ");
-        terms.forEach(function(term){
-            const regex = new RegExp(term, 'gi');
-            let text = $box.innerHTML;
-            // text = text.replace(/(<mark class="highlight">|<\/mark>)/gim, '');
-            const newText = text.replace(regex, '<mark class="highlight">$&</mark>');
-            $box.innerHTML = newText;
-        });
+    if  (searchText !== undefined) {
+        // kendu karaktere bereziak +,- eta horrelakoak
+        searchText = searchText.replace(/[^a-zA-Z ]/g, "");
+        if (searchText.length > 0) {
+            let terms = searchText.split(" ");
+            terms.forEach(function(term){
+                const regex = new RegExp(term, 'gi');
+                let text = $box.innerHTML;
+                // text = text.replace(/(<mark class="highlight">|<\/mark>)/gim, '');
+                const newText = text.replace(regex, '<mark class="highlight">$&</mark>');
+                $box.innerHTML = newText;
+            });
+        }
     }
+
 
     const appLocale = $('#app_locale').val();
     const datatablesLocaleURL = "/build/datatables/" + appLocale + ".json";

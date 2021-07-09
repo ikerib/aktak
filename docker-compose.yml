@@ -2,63 +2,71 @@ version:  '3.7'
 services:
     db:
         container_name: aktak_db
-        image: mysql:8.0
+        image: mysql
         command: ["--default-authentication-plugin=mysql_native_password"]
-        environment:
-            MYSQL_DATABASE: ${DOCKER_MYSQL_DATABASE}
-            MYSQL_USER: ${DOCKER_MYSQL_USER}
-            MYSQL_PASSWORD: ${DOCKER_MYSQL_PASSWORD}
-            MYSQL_ROOT_PASSWORD: ${DOCKER_MYSQL_ROOT_PASSWORD}
-        volumes:
-            - mysql_erabakiak:/var/lib/mysql
         ports:
-        - '3306:3306'
+            - "3306:3306"
+        environment:
+            DOCKER_MYSQL_USER: ${DOCKER_MYSQL_USER}
+            MYSQL_ROOT_PASSWORD: ${DOCKER_MYSQL_ROOT_PASSWORD}
+            MYSQL_DATABASE: ${DOCKER_MYSQL_DATABASE}
+        volumes:
+            - aktak_mysql:/var/lib/mysql
 
     app:
         container_name: aktak_app
         env_file: ./.env
+        extra_hosts:
+            -   "host.docker.internal:host-gateway"
         build:
             context: .
-            dockerfile: ./docker/php/dev/Dockerfile
+            dockerfile: docker/dev/php/Dockerfile
             args:
+                - DOCKER_TIMEZONE=${DOCKER_TIMEZONE}
                 - USER_ID=${USER_ID}
+                - GROUP_ID=${GROUP_ID}
+                - DEBUGMODE=${DEBUGMODE}
         depends_on:
           - db
           - redis
-        environment:
-            XDEBUG_CONFIG: ${XDEBUG_CONFIG}
-            PHP_IDE_CONFIG: ${PHP_IDE_CONFIG}
         volumes:
-            - '.:/app'
-            - './docker/php/dev/.zsh_history:/home/appuser/.zsh_history:rw'
-        working_dir: /app
+            - '.:/usr/src/app'
+            - './docker/dev/php/conf/.zsh_history:/home/www-data/.zsh_history:rw'
+            - './docker/dev/php/conf/php.ini:/usr/local/etc/php/php.ini:ro'
+            - './docker/dev/php/conf/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini:ro'
+        working_dir: /usr/src/app
 
     nginx:
         container_name: aktak_nginx
         build:
-            context: .
-            dockerfile: docker/nginx/Dockerfile
-        volumes:
-            - './:/app'
-            - './docker/nginx/default.conf:/etc/nginx/conf.d/default.conf:ro'
+            context: ./
+            dockerfile: docker/dev/nginx/Dockerfile
         depends_on:
             - app
         ports:
-            - 80:80
+            - "80:80"
+        volumes:
+#            - './public/:/usr/src/app'
+            - './docker/dev/nginx/default.conf:/etc/nginx/conf.d/default.conf:ro'
+        volumes_from:
+            -   app
+        working_dir: /usr/src/app
 
     redis:
         container_name: aktak_redis
         image: redis:alpine
+        restart: always
         ports:
             - "6380:637"
         volumes:
-            - redis_erabakiak:/data
-
-    adminer:
-        image: adminer
-        ports:
-            - "8080:8080"
+            - aktak_redis:/data
 
 volumes:
-    mysql_erabakiak:
-    redis_erabakiak:
+    aktak_mysql:
+    aktak_redis:
+
+networks:
+    default:
+        ipam:
+            config:
+                - subnet: 172.183.0.0/16
