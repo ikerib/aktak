@@ -36,11 +36,11 @@ class Erabakia
      */
     private $temas;
 
-//    /**
-//     * @Vich\UploadableField(mapping="pdf_mapping", fileNameProperty="url")
-//     * @var File
-//     */
-//    private $pdfFile;
+    /**
+     * @Vich\UploadableField(mapping="pdf_mapping", fileNameProperty="url")
+     * @var File
+     */
+    private $pdfFile;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)

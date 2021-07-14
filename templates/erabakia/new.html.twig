@@ -17,6 +17,12 @@
         </div>
     </div>
 
+    <ul>
+        {% for error in errors %}
+            <li>{{ error.message }}</li>
+        {% endfor %}
+    </ul>
+
     {{ include('erabakia/_form.html.twig') }}
 
 {% endblock %}

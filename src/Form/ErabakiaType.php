@@ -3,7 +3,9 @@
 namespace App\Form;
 
 use App\Entity\Erabakia;
+use App\Entity\Liburua;
 use FOS\CKEditorBundle\Form\Type\CKEditorType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -33,17 +35,17 @@ class ErabakiaType extends AbstractType
                 'config_name' => 'pasaia_config',
                 'config'      => array('uiColor' => '#ffffff'),
             ])
-//            ->add('pdfFile', VichFileType::class, [
-//                'label' => 'Fitxategia',
-//                'allow_delete' => true,
-//                'download_label' => 'Ikusi fitxategia',
-//                'delete_label' => 'Markatu hemen fitxategia ezabatzeko eta gorde botoia klikatu',
-//                'download_uri' => true,
-//                'attr' => [
-//                    'placeholder' => 'Aukeratu fitxategia'
-//                ],
-//                'required' => false
-//            ])
+            ->add('pdfFile', VichFileType::class, [
+                'label' => 'Fitxategia',
+                'allow_delete' => true,
+                'download_label' => 'Ikusi fitxategia',
+                'delete_label' => 'Markatu hemen fitxategia ezabatzeko eta gorde botoia klikatu',
+                'download_uri' => true,
+                'attr' => [
+                    'placeholder' => 'Aukeratu fitxategia'
+                ],
+                'required' => false
+            ])
             ->add('oharrak', CKEditorType::class, [
                 'config_name' => 'pasaia_config',
                 'config'      => array('uiColor' => '#ffffff'),
@@ -53,7 +55,11 @@ class ErabakiaType extends AbstractType
                 'config'      => array('uiColor' => '#ffffff'),
             ])
             ->add('akta')
-            ->add('liburua')
+            ->add('liburua', EntityType::class, [
+                'class' => Liburua::class,
+                'placeholder' => 'Aukeratu bat',
+                'required' => true
+            ])
         ;
     }
 

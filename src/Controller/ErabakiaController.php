@@ -13,6 +13,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 /**
  * @Route("/kudeatu/erabakia")
@@ -64,25 +65,34 @@ class ErabakiaController extends AbstractController
      *
      * @return Response
      */
-    public function new(Request $request): Response
+    public function new(Request $request, ValidatorInterface $validator): Response
     {
         $erabakium = new Erabakia();
         $form = $this->createForm(ErabakiaType::class, $erabakium);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($erabakium);
-            $entityManager->flush();
+        $errors = $validator->validate($erabakium);
 
-            return $this->redirectToRoute('erabakia_index');
+        if ( count($errors) > 0 ) {
+            return $this->render('erabakia/new.html.twig', [
+                'errors' => $errors,
+                'erabakium' => $erabakium,
+                'form' => $form->createView(),
+            ]);
         } else {
-            dump($form);
+            if ($form->isSubmitted() && $form->isValid()) {
+                $entityManager = $this->getDoctrine()->getManager();
+                $entityManager->persist($erabakium);
+                $entityManager->flush();
+
+                return $this->redirectToRoute('erabakia_index');
+            }
         }
 
         return $this->render('erabakia/new.html.twig', [
             'erabakium' => $erabakium,
             'form' => $form->createView(),
+            'errors' => null
         ]);
     }
 
