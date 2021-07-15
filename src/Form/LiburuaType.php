@@ -21,7 +21,8 @@ class LiburuaType extends AbstractType
             ])
             ->add('amaiera', DateType::class, [
                 'widget' => 'single_text',
-                'html5' => false
+                'html5' => false,
+                'required' => false
             ])
             ->add('orriak')
             ->add('altuera')
